@@ -1,6 +1,6 @@
 <img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
-# Windows Installation guide on the Xiaomi Pocophone F1 Without PC
+# Windows Installation guide for Xiaomi Pocophone F1 Without PC
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
 ## ⚠️ Warning
