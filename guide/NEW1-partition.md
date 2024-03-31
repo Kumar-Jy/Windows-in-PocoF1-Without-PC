@@ -10,7 +10,7 @@
 
 - [OfoxRecovery](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing)
 
-- [ModifyPartition.zip](ModifyPartition.zip)
+- [ModifyPartition.zip](https://drive.google.com/file/d/1v9lPKlI1k1T1wRWdj4GDBRgGtu4JYOLN/view?usp=sharing)
 
 - [Magisk](https://github.com/topjohnwu/Magisk/releases/download/v27.0/Magisk-v27.0.apk)
 
@@ -44,7 +44,7 @@ fastboot flash recovery path\to\twrp.img reboot recovery
 ```
 
 #### Creat partitioning for Windows
-> download [ModifyPartition.zip](ModifyPartition.zip) , reboot to recovery and flash it.
+> download [ModifyPartition.zip](https://drive.google.com/file/d/1v9lPKlI1k1T1wRWdj4GDBRgGtu4JYOLN/view?usp=sharing) , reboot to recovery and flash it.
 > 
 > Your Beryllium is ready for modify partitions
 > 
