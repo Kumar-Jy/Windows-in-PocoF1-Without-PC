@@ -1,6 +1,6 @@
 <img align="right" src="beryllium.png" width="350" alt="Windows 11 running on beryllium">
 
-# Running Windows on the Xiaomi Pocophone F1
+# Install Windows on the Xiaomi Pocophone F1 Without PC
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
 ## ⚠️ Warning
