@@ -8,7 +8,7 @@
 ### Prerequisites
 - A brain (most important of all)
 
-- [Recovery](Ofoxrecovery.zip)
+- [Recovery]([Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=drive_link))
 
 - [Resize.zip](Resize.zip)
 
