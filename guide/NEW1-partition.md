@@ -64,7 +64,7 @@ chmod -x /cache/format
 #### Root android and flash magisk module
 > If your androad is not rooted Download latest magisk and flash it.
 >
-> Now flash [mountmodule.zip](mountmodule.zip) and flash it through magisk.
+> Now download [mountmodule.zip](mountmodule.zip) and flash it through magisk.
 >
 > Reboot and see two new folder "Windows" and "Winpe" appear in internal storage. 
 
