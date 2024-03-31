@@ -12,14 +12,14 @@ If you want to relock your bootloader you'll need your partition table to be sto
 
 ### Prerequisites
 
-- [RestorePartition.zip](RestorePartition.zip)
+- [RestorePartition.zip](https://drive.google.com/file/d/1J2fUTRvM5o7jQc824EJpFgBg7W8shiLg/view?usp=sharing)
 
 
 ### Uninstall instructions
 > [!Important]
 > This will delete all your android data.
 > 
-> Flash [RestorePartition.zip](RestorePartition.zip) from your recovery
+> Flash [RestorePartition.zip](https://drive.google.com/file/d/1J2fUTRvM5o7jQc824EJpFgBg7W8shiLg/view?usp=sharing) from your recovery
 > 
 > reboot to recovery and Format data  type  yes
 > 
