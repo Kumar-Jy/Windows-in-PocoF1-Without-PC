@@ -9,7 +9,7 @@
 
 - [Windows on ARM esd](https://worproject.com/esd)
 
-- [WinPE](https://drive.google.com/file/d/1q2jijIKCF7xuFUX0J2SjYfo7nDvRAyOE/view?usp=sharing)
+- [WinPE](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing)
   
 - [BootPE image tianma nvt](pe-tianma-nvt.img)
 
@@ -24,7 +24,7 @@
   
   
 #### Checking Touchscreen panel type
-> Install *Device Info HW app* - open and go to genral - Tuchscreen it should be *NVT-ts* of *FTS-ts*
+> Install [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share) - open and go to genral - Tuchscreen it should be *NVT-ts* of *FTS-ts*
 >
 >  you can check it through recovery terminal also 
 ```cmd
@@ -36,11 +36,11 @@ adb shell dmesg | grep dsi_display_bind
   
   
 #### Copy Installation File
-> Copy windows esd file to Internal Storage -> Windows folder
+> Download [windowsARM](https://worproject.com/esd) and copy to Internal Storage -> Windows folder
 > 
-> unzip Driver.zip and copy to Internal Storage -> Windows folder
+> unzip [Driver.zip](https://github.com/n00b69/woaberyllium/releases/tag/Drivers) and copy to Internal Storage -> Windows folder
 > 
-> unzip WinPE.zip open folder and copy all file to Internal Storage -> Winpe folder
+> unzip [WinPE.zip](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing) open folder and copy all file to Internal Storage -> Winpe folder
  
 
 #### Backup Importent Pertition
