@@ -15,7 +15,9 @@
 
 - [BootPE image edbg fts](pe-edbg-fts.img)
 
-- [Windows Setup image](https://github.com/n00b69/woaberyllium/releases/tag/UEFI)
+- [Windows Setup image tianma nvt](Setup-tianma-nvt.img)
+
+- [Windows Setup image edbg fts](Setup-edbg-fts.img)
   
 - [Drivers](https://github.com/n00b69/woaberyllium/releases/tag/Drivers)
 
@@ -41,12 +43,12 @@ adb shell dmesg | grep dsi_display_bind
 > unzip WinPE.zip open folder and copy all file to Internal Storage -> Winpe folder
  
 
-#### Back Importent Pertition
+#### Backup Importent Pertition
 Use the recovery backup feature to backup boot, EFS, Modem, Persist.
 
 
 #### Running WinPe
-> Reboot to recovery - flash - *winsetup....img* on boot partition (from Download Folder) - reboot to systen
+> Reboot to recovery - flash - *bootPE....img* on boot partition (from Download Folder) - reboot to systen
 > Select  *UEFI OS on #4*  by pressing vol up and press power button to continue boot.
 
 
@@ -71,7 +73,7 @@ Use the recovery backup feature to backup boot, EFS, Modem, Persist.
 
 
 #### Boot into Windows
-> Press Power + Vol Up - Reboot to recovery - flash - *winsetup....img* on boot partition - reboot to systen
+> Press Power + Vol Up - Reboot to recovery - flash - *setup....img* on boot partition - reboot to systen
 
 
 ### Setting up Windows
