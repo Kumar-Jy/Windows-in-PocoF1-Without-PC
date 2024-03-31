@@ -24,8 +24,6 @@ This project is in an early stage, all the files here have been contributed by o
 
 - [Update drivers](guide/update.md)
 
-- [Reinstall instructions](guide/reinstall.md)
-
 - [Uninstall instructions](guide/uninstall.md)
 
 ## Contributors
