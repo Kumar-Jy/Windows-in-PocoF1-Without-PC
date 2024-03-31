@@ -1,7 +1,7 @@
-<img align="right" src="beryllium.png" width="350" alt="Windows 11 running on beryllium">
+<img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
 
-# Running Windows on the Xiaomi Pocophone F1
+# Windows installation guide for PocoF1
 
 ## Installing Windows
 
