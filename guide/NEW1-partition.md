@@ -8,9 +8,9 @@
 ### Prerequisites
 - A brain (most important of all)
 
-- [Recovery]([Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=drive_link))
+- [Recovery]([Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing)
 
-- [Resize.zip](Resize.zip)
+- [ModifyPartition.zip](ModifyPartition.zip)
 
 - [Magisk](https://github.com/topjohnwu/Magisk/releases/download/v27.0/Magisk-v27.0.apk)
 
