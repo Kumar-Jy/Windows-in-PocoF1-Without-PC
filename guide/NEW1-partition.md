@@ -36,7 +36,7 @@
 #### Flash recovery
 > if your existing recovery not working ...
 > 
-> Flash Ofoxrecovery.zip through your existing recovery
+> Flash [Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing) through your existing recovery
 > or
 > exterect recovery.img and flash it via fastboot command
 ```cmd
@@ -44,7 +44,7 @@ fastboot flash recovery path\to\twrp.img reboot recovery
 ```
 
 #### Creat partitioning for Windows
-> download resize.zip , reboot to recovery and flash it.
+> download [ModifyPartition.zip](ModifyPartition.zip) , reboot to recovery and flash it.
 > 
 > Your Beryllium is ready for modify partitions
 > 
@@ -64,7 +64,7 @@ chmod -x /cache/format
 #### Root android and flash magisk module
 > If your androad is not rooted Download latest magisk and flash it.
 >
-> Now flash mountmodule.zip and flash it through magisk.
+> Now flash [mountmodule.zip](mountmodule.zip) and flash it through magisk.
 >
 > Reboot and see two new folder "Windows" and "Winpe" appear in internal storage. 
 
