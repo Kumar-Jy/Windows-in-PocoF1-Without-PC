@@ -1,4 +1,4 @@
-<img align="right" src="https://github.com/n00b69/woaberyllium/blob/main/beryllium.png" width="350" alt="Windows 11 running on beryllium">
+<img align="right" src="beryllium.png" width="350" alt="Windows 11 running on beryllium">
 
 
 # Running Windows on the Xiaomi Pocophone F1
@@ -12,16 +12,20 @@ If you want to relock your bootloader you'll need your partition table to be sto
 
 ### Prerequisites
 
-- [RestorePocoF1.zip](RestorePocoF1.zip)
+- [RestorePartition.zip](RestorePartition.zip)
 
 
 ### Uninstall instructions
 > [!Important]
 > This will delete all your android data.
-> Flash *RestorePocoF1.zip* from your recovery
-> reboot to recovery and Format data type yes
+> 
+> Flash [RestorePartition.zip](RestorePartition.zip) from your recovery
+> 
+> reboot to recovery and Format data  type  yes
+> 
 > Reboot to system
-> your android is back now. 
+> 
+> your android storage is back to stock now. 
 
 ## Finished!
 
