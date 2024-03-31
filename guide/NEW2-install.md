@@ -9,9 +9,11 @@
 
 - [Windows on ARM esd](https://worproject.com/esd)
 
-- [WinPE](WinPE.zip)
+- [WinPE](https://drive.google.com/file/d/1q2jijIKCF7xuFUX0J2SjYfo7nDvRAyOE/view?usp=sharing)
   
-- [UEFI WinPE image](https://github.com/n00b69/woaberyllium/releases/tag/UEFI)
+- [BootPE image tianma nvt](pe-tianma-nvt.img)
+
+- [BootPE image rdbg fts](pe-edbg-fts.img)
 
 - [Windows Setup image](https://github.com/n00b69/woaberyllium/releases/tag/UEFI)
   
