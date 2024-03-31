@@ -13,7 +13,7 @@
   
 - [BootPE image tianma nvt](pe-tianma-nvt.img)
 
-- [BootPE image rdbg fts](pe-edbg-fts.img)
+- [BootPE image edbg fts](pe-edbg-fts.img)
 
 - [Windows Setup image](https://github.com/n00b69/woaberyllium/releases/tag/UEFI)
   
@@ -23,17 +23,21 @@
   
 #### Checking Touchscreen panel type
 > Install *Device Info HW app* - open and go to genral - Tuchscreen it should be *NVT-ts* of *FTS-ts*
-> you can check it through recovery terminal also 
+>
+>  you can check it through recovery terminal also 
 ```cmd
 adb shell dmesg | grep dsi_display_bind
 ```
 > This should output either `dsi_ebbg_fhd_ft8719_video_display` or `dsi_tianma_fhd_nt36672a_video_display`
+>
 > Download all boot image file accordingly.
   
   
 #### Copy Installation File
 > Copy windows esd file to Internal Storage -> Windows folder
+> 
 > unzip Driver.zip and copy to Internal Storage -> Windows folder
+> 
 > unzip WinPE.zip open folder and copy all file to Internal Storage -> Winpe folder
  
 
@@ -48,10 +52,21 @@ Use the recovery backup feature to backup boot, EFS, Modem, Persist.
 
 ### Windows installation
 > Now you are on winpe.
+> 
 > Connect Mouse - open Dism++ (from C Drive - other - dism++(Arm64))
-> apply image (File - Apply image - select install.esd (D Drive) - select target Image - select installation Path (D Drive) - Add Boot - OK - let it complete)
-> Click on open Sesion - Drivers - Add - Select Driver Folder ( from D Drive) after driver installation completed, close dism++ 
-> Now Goto C Drive - other - right click on miscfix.bat and run as administrator, let it complete. it will automatically shutdown.
+> 
+> apply image (File - Apply image - select install.esd (D Drive) -
+>
+>  select target Image - select installation Path (D Drive) - Add Boot - OK - let it complete)
+> 
+> Click on open Sesion - Drivers - Add -
+>
+> Select Driver Folder ( from D Drive) after driver installation completed, close dism++
+> 
+> Open C Drive - other - right click on miscfix.bat and run as administrator, let it complete.
+>
+> It will automatically shutdown.
+> 
 > Your Windows Installation completed.
 
 
