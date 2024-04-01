@@ -1,6 +1,5 @@
 <img align="right" src="beryllium.png" width="350" alt="Windows 11 running on beryllium">
 
-
 # Running Windows on the Xiaomi Pocophone F1
 
 ## Uninstallation
@@ -11,23 +10,21 @@ If you want to uninstall windows this is used instead of deleting partitions man
 If you want to relock your bootloader you'll need your partition table to be stock.
 
 ### Prerequisites
-
 - [RestorePartition.zip](https://drive.google.com/file/d/1J2fUTRvM5o7jQc824EJpFgBg7W8shiLg/view?usp=sharing)
 
 
 ### Uninstall instructions
 > [!Important]
-> This will delete all your android data.
-> 
-> Flash [RestorePartition.zip](https://drive.google.com/file/d/1J2fUTRvM5o7jQc824EJpFgBg7W8shiLg/view?usp=sharing) from your recovery
-> 
-> reboot to recovery and Format data  type  yes
-> 
-> Reboot to system
-> 
-> your android storage is back to stock now. 
+> This will delete all your Android data.
+
+- Boot to recovery and flash [RestorePartition.zip](https://drive.google.com/file/d/1J2fUTRvM5o7jQc824EJpFgBg7W8shiLg/view?usp=sharing)
+- Reboot to recovery again and select Wipe > Format Data > Type `yes`
+- Reboot your system
 
 ## Finished!
+
+
+
 
 
 
