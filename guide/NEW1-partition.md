@@ -1,6 +1,5 @@
 <img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
-
 # Windows installation guide for PocoF1
 
 ## Partitioning your device
@@ -33,43 +32,42 @@
 > This guide assumes you are rooted, if you aren't, please follow [this guide](root.md) first.
 > Your existing recovery should work, if not,  use the provided recovery image in this guide. 
 
-#### Flash recovery
-> if your existing recovery not working ...
-> 
-> Flash [Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing) through your existing recovery
-> or
-> exterect recovery.img and flash it via fastboot command
-```cmd
-fastboot flash recovery path\to\twrp.img reboot recovery
-```
+### Flash recovery
+> If your existing recovery does not work
 
-#### Creat partitioning for Windows
-> download [ModifyPartition.zip](https://drive.google.com/file/d/1aLex1_xi4AXwg5zc533fxTwTyU5zRZgl/view?usp=sharing) , reboot to recovery and flash it.
-> 
-> Your Beryllium is ready for modify partitions
-> 
-> NOW go to Main screen -> Advanced -> Terminal
-> 
-> Type   modify   and wait till phone reboots to recovery 
-```cmd
-modify
-```
-> After reboot to recovery open terminal and type :
+- Flash [Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing) through your existing recovery
+
+#### Create partitions for Windows
+- Download [ModifyPartition.zip](https://drive.google.com/file/d/1aLex1_xi4AXwg5zc533fxTwTyU5zRZgl/view?usp=sharing) , reboot to recovery and flash it.
+- In your recovery, go to Advanced > Terminal
+- Type `modify` and wait until the phone reboots to recovery 
+- Opem Terminal again and run
 ```cmd
 chmod -x /cache/format
 . /cache/format
 ```
-> Reboot system and see if Android still works
+- Reboot your system and see if Android still works
 
-#### Root android and flash magisk module
-> If your androad is not rooted Download latest magisk and flash it.
->
-> Now download [mountmodule.zip](mountmodule.zip) and flash it through magisk.
->
-> Reboot and see two new folder "Windows" and "Winpe" appear in internal storage. 
+### Root android and flash magisk module
+> If your Android is not rooted, use the [root guide](root.md) first.
 
+- Flash [mountmodule.zip](mountmodule.zip) in Magisk.
+- Reboot and you will find two folders "Windows" and "Winpe" in internal storage. 
 
 ## [Next step: Installing Windows](/guide/NEW2-install.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
