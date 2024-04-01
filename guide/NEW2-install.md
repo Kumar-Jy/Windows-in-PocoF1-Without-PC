@@ -43,7 +43,7 @@ adb shell dmesg | grep dsi_display_bind
 
 
 #### Copy Installation File
-> Download [windowsARM](https://worproject.com/esd) and copy to Internal Storage -> Windows folder
+> Download [windowsARM](https://worproject.com/esd) , rename it to install.esd and copy to Internal Storage -> Windows folder
 > 
 > unzip [Driver.zip](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk) and copy to Internal Storage -> Winpe folder
 > 
