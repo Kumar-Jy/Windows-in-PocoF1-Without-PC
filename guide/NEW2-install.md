@@ -1,12 +1,10 @@
 <img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
-
 # Windows installation guide for PocoF1
 
 ## Installing Windows
 
 ### Prerequisites
-
 - [Windows on ARM esd](https://worproject.com/esd)
 
 - [WinPE](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing)
@@ -21,12 +19,12 @@
   
 - [Drivers](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk)
 
-  
-  
-#### Checking Touchscreen panel type
-> Install [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share) - open and go to genral - Tuchscreen it should be *NVT-ts* of *FTS-ts*
->
->  you can check it through recovery terminal also 
+### Checking Touchscreen panel type
+- Install [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share)
+- Go to **General** > **Touchscreen**.
+- You should either see **NVT-ts** of **FTS-ts**
+
+> You can also check it through recovery terminal also 
 ```cmd
 adb shell dmesg | grep dsi_display_bind
 ```
@@ -34,67 +32,46 @@ adb shell dmesg | grep dsi_display_bind
 >
 > Download all boot image file accordingly.
   
-#### Mount windows and WinPE Partition on Android
-> Install Magisk and root your android if not already rooted
-> 
->  Open magisk manager app and flash [mountmodule.zip](mountmodule.zip)
->
-> Reboot and check two new folder (Windows and Winpe) created on your internal storage
-
+### Mount Windows and WinPE Partition on Android
+> Make sure Windows and WinPE are already mounted using the module on the previous page
 
 #### Copy Installation File
-> Download [windowsARM](https://worproject.com/esd) , rename it to install.esd and copy to Internal Storage -> Windows folder
-> 
-> unzip [Driver.zip](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk) and copy to Internal Storage -> Winpe folder
-> 
-> unzip [WinPE.zip](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing) open folder and copy all file to Internal Storage -> Winpe folder
+- Download [windowsARM](https://worproject.com/esd), rename it to install.esd, and copy it to Internal Storage > Windows
+- Unzip [Driver.zip](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk) and copy it to Internal Storage > Winpe
+- Unzip [WinPE.zip](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing) and copy all files to Internal Storage -> Winpe
  
+#### Backup important partitions
+Reboot to Recovery and make a backup of boot, EFS, Modem and Persist.
 
-#### Backup Importent Pertition
-Reboot to Recovery and take backup of boot, EFS, Modem and Persist.
-
-
-#### Running WinPe
-> Reboot to recovery - flash - *bootPE....img* on boot partition (from Download Folder) - reboot to systen
-
-> Select  *UEFI OS on #4*  by pressing vol up and press power button to continue boot.
-
+### Running WinPe
+- In your recovery, flash **bootPE....img** to your boot partition (from the Downloads folder), then reboot your device
+- Select  *UEFI OS on #4*  by pressing vol up and press power button to continue boot.
 
 ### Windows installation
-> Now you are on winpe.
-> 
-> Connect Keyboard/Mouse - open Dism++ (from C Drive - other - dism++(Arm64))
-> 
-> Open File - Apply image -
-> enter the path of esd file or you can Browse and select D Drive
+> Once in Winpe, connect a Keyboard/Mouse - Open Dism++ (from C Drive - other - dism++(Arm64))
+- Open File > Apply image
+- Enter the path of the **install.esd** file or you can Browse and select D Drive
 ```cmd
 D:\
 ```
-> Change Target Image as per your requirment.
->
-> enter Installation Drive Path or you can Browse and select D Drive
+- Change Target Image as per your requirment.
+- Enter the installation drive Path or you can Browse and select D Drive
 ```cmd
 D:\install.esd
 ```
+- Check Add Boot and click OK, then wait for Windows to install
 
-> Check Add Boot and click OK - let windows install.
->
->
+
 ### Driver installation
-> Click on open Sesion - Drivers - Add -
->
-> Select Driver Folder ( from C Drive) let it completed, and close dism++
-> 
-> Open C Drive - other - right click on miscfix.bat and run as administrator, let it complete.
->
-> It will automatically shutdown.
-> 
-> Your Windows and Driver Installation completed.
-
+- Click on open Session > Drivers > Add
+- Select the driver folder ( from C Drive)
+- Wait for it to finish, then close Dism++
+- Open C Drive > other > right click on miscfix.bat and run as administrator, let it complete.
+- After it automatically shuts down, your installation is complete
 
 #### Boot into Windows
-> Press Power + Vol Up - Reboot to recovery - flash - *setup....img* on boot partition - reboot to systen
-
+- Press Power + Vol Up to reboot to recovery
+- Flash > **setup....img** to the boot partition and reboot your device
 
 ### Setting up Windows
 Your device will now set up Windows. This will take some time. It will eventually reboot, and after that the initial setup (oobe) should launch.
@@ -103,6 +80,11 @@ Your device will now set up Windows. This will take some time. It will eventuall
 > To skip the Microsoft Account login, use "g" for the email and password. Windows will then let you make a local account
 
 ## [Last step: Setting up dualboot](/guide/dualboot.md)
+
+
+
+
+
 
 
 
