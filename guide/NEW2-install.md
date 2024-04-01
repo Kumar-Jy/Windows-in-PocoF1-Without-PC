@@ -57,9 +57,9 @@ Use the recovery backup feature to backup boot, EFS, Modem, Persist.
 > 
 > Connect Mouse - open Dism++ (from C Drive - other - dism++(Arm64))
 > 
-> apply image (File - Apply image - select install.esd (D Drive) -
+> File - Apply image - select install.esd (D Drive) -
 >
->  select target Image - select installation Path (D Drive) - Add Boot - OK - let it complete)
+> select target Image - select installation Path (D Drive) -  Add Boot - OK - let it complete)
 > 
 > Click on open Sesion - Drivers - Add -
 >
