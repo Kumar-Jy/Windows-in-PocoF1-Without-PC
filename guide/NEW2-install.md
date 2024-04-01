@@ -34,42 +34,62 @@ adb shell dmesg | grep dsi_display_bind
 >
 > Download all boot image file accordingly.
   
-  
+#### Mount windows and WinPE Partition on Android
+> Install Magisk and root your android if not already rooted
+> 
+>  Open magisk manager app and flash [mountmodule.zip](mountmodule.zip)
+>
+> Reboot and check two new folder (Windows and Winpe) created on your internal storage
+
+
 #### Copy Installation File
 > Download [windowsARM](https://worproject.com/esd) and copy to Internal Storage -> Windows folder
 > 
-> unzip [Driver.zip](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk) and copy to Internal Storage -> Windows folder
+> unzip [Driver.zip](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk) and copy to Internal Storage -> Winpe folder
 > 
 > unzip [WinPE.zip](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing) open folder and copy all file to Internal Storage -> Winpe folder
  
 
 #### Backup Importent Pertition
-Use the recovery backup feature to backup boot, EFS, Modem, Persist.
+Reboot to Recovery and take backup of boot, EFS, Modem and Persist.
 
 
 #### Running WinPe
 > Reboot to recovery - flash - *bootPE....img* on boot partition (from Download Folder) - reboot to systen
+
 > Select  *UEFI OS on #4*  by pressing vol up and press power button to continue boot.
 
 
 ### Windows installation
 > Now you are on winpe.
 > 
-> Connect Mouse - open Dism++ (from C Drive - other - dism++(Arm64))
+> Connect Keyboard/Mouse - open Dism++ (from C Drive - other - dism++(Arm64))
 > 
-> File - Apply image - select install.esd (D Drive) -
+> Open File - Apply image -
+> enter the path of esd file or you can Browse and select D Drive
+```cmd
+D:\
+```
+> Change Target Image as per your requirment.
 >
-> select target Image - select installation Path (D Drive) -  Add Boot - OK - let it complete)
-> 
+> enter Installation Drive Path or you can Browse and select D Drive
+```cmd
+D:\install.esd
+```
+
+> Check Add Boot and click OK - let windows install.
+>
+>
+### Driver installation
 > Click on open Sesion - Drivers - Add -
 >
-> Select Driver Folder ( from D Drive) after driver installation completed, close dism++
+> Select Driver Folder ( from C Drive) let it completed, and close dism++
 > 
 > Open C Drive - other - right click on miscfix.bat and run as administrator, let it complete.
 >
 > It will automatically shutdown.
 > 
-> Your Windows Installation completed.
+> Your Windows and Driver Installation completed.
 
 
 #### Boot into Windows
