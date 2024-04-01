@@ -1,12 +1,10 @@
 <img align="right" src="https://github.com/n00b69/woaberyllium/blob/main/beryllium.png" width="350" alt="Windows 11 running on beryllium">
 
-
 # Running Windows on the Xiaomi Pocophone F1
 
 ## Updating drivers
 
 ### Prerequisites
-
 - [UEFI image](https://github.com/n00b69/woaberyllium/releases/tag/UEFI)
   
 - [Drivers](https://github.com/n00b69/woaberyllium/releases/tag/Drivers)
@@ -19,18 +17,31 @@
 fastboot flash recovery path\to\twrp.img reboot recovery
 ```
 
-#### update Driver
-> Reboot to recovery flash PEboot.img according to your touch panel
-> Boot to WinPE open Dism++ Select all Driver and Delete
-> Now install New Driver
-> type ```cmd shutdown -s -t -0 ``` on command windows 
+#### Updating drivers
+- Flash **PEboot.img** according to your touch panel
+- Reboot to WinPE
+- Open Dism++, select **All Drivers**, then **Delete**
+- Install the new drivers
+- Open CMD and use ```shutdown -s -t -0 ``` to shut down
 
-
-##### Boot back into Windows
-> Reboot your device to recovery. reflash uefi-beryllium-....img on boot partition this boots you to windows.
-
+### Boot back into Windows
+- Reboot your device to recovery
+- Reflash uefi-beryllium-....img to the boot partition
+- Reboot to boot back into Windows
 
 ## Finished!
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
