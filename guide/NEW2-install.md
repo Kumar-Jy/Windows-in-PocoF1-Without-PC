@@ -9,13 +9,13 @@
 
 - [WinPE](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing)
   
-- [BootPE image tianma nvt](pe-tianma-nvt.img)
+- [PE boot image tianma nvt](pe-tianma-nvt.img)
 
-- [BootPE image edbg fts](pe-edbg-fts.img)
+- [PE boot image edbg fts](pe-ebbg-fts.img)
 
-- [Windows Setup image tianma nvt](Setup-tianma-nvt.img)
+- [Windows boot image tianma nvt](Setup-tianma-nvt.img)
 
-- [Windows Setup image edbg fts](Setup-edbg-fts.img)
+- [Windows boot image ebbg fts](Setup-ebbg-fts.img)
   
 - [Drivers](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk)
 
@@ -24,7 +24,7 @@
 - Go to **General** > **Touchscreen**.
 - You should either see **NVT-ts** of **FTS-ts**
 
-> You can also check it through recovery terminal also 
+> You can check it through recovery terminal also 
 ```cmd
 adb shell dmesg | grep dsi_display_bind
 ```
@@ -33,45 +33,33 @@ adb shell dmesg | grep dsi_display_bind
 > Download all boot image file accordingly.
   
 ### Mount Windows and WinPE Partition on Android
-> Make sure Windows and WinPE are already mounted using the module on the previous page
+> Make sure Windows and Winpe folder are already mounted using the module on the previous page
 
 #### Copy Installation File
 - Download [windowsARM](https://worproject.com/esd), rename it to install.esd, and copy it to Internal Storage > Windows
-- Unzip [Driver.zip](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk) and copy it to Internal Storage > Winpe
-- Unzip [WinPE.zip](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing) and copy all files to Internal Storage -> Winpe
+- Unzip [Driver.zip](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk) and copy it to Internal Storage > Windows > Driver
+- Unzip [WinPE.zip](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing) and copy all internal files/folder from it to Internal Storage -> Winpe
+> [!Note]
+> Be sure all copyed file/folder is in the right place and name must be exectly as mentioned above. otherwize installation process will not work.
  
 #### Backup important partitions
 Reboot to Recovery and make a backup of boot, EFS, Modem and Persist.
 
 ### Running WinPe
-- In your recovery, flash **bootPE....img** to your boot partition (from the Downloads folder), then reboot your device
+- In your recovery, flash **PEboot image** to your boot partition, then reboot.
 - Select  *UEFI OS on #4*  by pressing vol up and press power button to continue boot.
 
-### Windows installation
-> Once in Winpe, connect a Keyboard/Mouse - Open Dism++ (from C Drive - other - dism++(Arm64))
-- Open File > Apply image
-- Enter the path of the **install.esd** file or you can Browse and select D Drive
+### Windows and Driver installation
+> Once in Winpe, type ``` C:\install ``` on opennd command prompt and press enter
 ```cmd
-D:\
+C:\install
 ```
-- Change Target Image as per your requirment.
-- Enter the installation drive Path or you can Browse and select D Drive
-```cmd
-D:\install.esd
-```
-- Check Add Boot and click OK, then wait for Windows to install
-
-
-### Driver installation
-- Click on open Session > Drivers > Add
-- Select the driver folder ( from C Drive)
-- Wait for it to finish, then close Dism++
-- Open C Drive > other > right click on miscfix.bat and run as administrator, let it complete.
-- After it automatically shuts down, your installation is complete
+- Installation process started . After it automatically shutdown.
 
 #### Boot into Windows
 - Press Power + Vol Up to reboot to recovery
-- Flash > **setup....img** to the boot partition and reboot your device
+- Flash > **setup Windows image file** to the boot partition and reboot your device
+- Windows installation process has been completed now.
 
 ### Setting up Windows
 Your device will now set up Windows. This will take some time. It will eventually reboot, and after that the initial setup (oobe) should launch.
@@ -80,14 +68,6 @@ Your device will now set up Windows. This will take some time. It will eventuall
 > To skip the Microsoft Account login, use "g" for the email and password. Windows will then let you make a local account
 
 ## [Last step: Setting up dualboot](/guide/dualboot.md)
-
-
-
-
-
-
-
-
 
 
 
