@@ -7,7 +7,7 @@
 ### Prerequisites
 - [Windows on ARM esd](https://worproject.com/esd)
 
-- [WinPE](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing)
+- [WinPE](https://drive.google.com/file/d/1ROmr2ki69QigIVFXJV5fRRSSd7K6h17D/view?usp=drive_link)
   
 - [PE boot image tianma nvt](pe-tianma-nvt.img)
 
