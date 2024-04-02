@@ -15,7 +15,7 @@
 
 - [Windows boot image tianma nvt](Setup-tianma-nvt.img)
 
-- [Windows boot image ebbg fts](Setup-ebbg-fts.img)
+- [Windows boot image ebbg fts](setup-ebbg-fts.img)
   
 - [Drivers](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk)
 
