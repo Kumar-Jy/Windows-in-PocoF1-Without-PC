@@ -65,8 +65,9 @@ C:\install
 Your device will now set up Windows. This will take some time. It will eventually reboot, and after that the initial setup (oobe) should launch.
 
 > [!Note]
-> To skip the Microsoft Account login, use "g" for the email and password. Windows will then let you make a local account
-> If Sound and Rotation not working reboot to recovery and flash latest UEFI(https://github.com/n00b69/woa-beryllium/releases/tag/UEFI) on boot partition and it will start working.
+> To skip the Microsoft Account login, use "g" for the email and password. Windows will then let you make a local account.
+
+> If Sound and Rotation not working reboot to recovery and flash latest UEFI(https://github.com/n00b69/woa-beryllium/releases/tag/UEFI)on boot partition and it will start working.
 
 ## [Last step: Setting up dualboot](/guide/dualboot.md)
 
