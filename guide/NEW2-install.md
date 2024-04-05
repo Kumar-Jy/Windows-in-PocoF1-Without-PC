@@ -18,15 +18,14 @@
 - Install [Device Info HW apk](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share)
 - Go to **General** > **Touchscreen**.
 - You should either see **NVT-ts** of **FTS-ts**
+- Download all [boot image](https://drive.google.com/drive/folders/1M64iZ3aeNiy0vvhW5refvDj0k0oXyAL1) accordingly.
 
 > You can check it through recovery terminal also 
 ```cmd
 adb shell dmesg | grep dsi_display_bind
 ```
 > This should output either `dsi_ebbg_fhd_ft8719_video_display` or `dsi_tianma_fhd_nt36672a_video_display`
->
-> Download all [boot image](https://drive.google.com/drive/folders/1M64iZ3aeNiy0vvhW5refvDj0k0oXyAL1) accordingly.
-  
+>  
 ### Mount Windows and WinPE Partition on Android
 > Make sure Windows and Winpe folder are already mounted using the magisk module on the previous page
 
