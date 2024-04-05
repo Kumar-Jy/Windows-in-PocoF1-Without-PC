@@ -39,9 +39,8 @@
 
 #### Create partitions for Windows
 - Download [ModifyPartition.zip](https://drive.google.com/file/d/1aLex1_xi4AXwg5zc533fxTwTyU5zRZgl/view?usp=sharing) , reboot to recovery and flash it.
-- In your recovery, go to Advanced > Terminal
-- Type `modify` and wait until the phone reboots to recovery 
-- Opem Terminal again and run
+- Open terminal Type `modify` and wait until the phone reboot and back to recovery 
+- Open Terminal again and run
 ```cmd
 chmod -x /cache/format
 . /cache/format
