@@ -22,7 +22,7 @@
 
 > You can check it through recovery terminal also 
 ```cmd
-adb shell dmesg | grep dsi_display_bind
+dmesg | grep dsi_display_bind
 ```
 > This should output either `dsi_ebbg_fhd_ft8719_video_display` or `dsi_tianma_fhd_nt36672a_video_display`
 >  
