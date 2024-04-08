@@ -5,7 +5,7 @@
 ## Installing Windows
 
 ### Prerequisites
-- [Windows on ARM esd](https://worproject.com/esd)
+- [Windows on ARM esd](https://worproject.com/esd) (Select - Version: 11 Build: 22631.2861 Architecture: ARM64 Edition: CLIENT Language: select your language)
 
 - [WinInstallar](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link)
     
