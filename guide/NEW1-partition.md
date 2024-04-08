@@ -9,11 +9,8 @@
 
 - [OfoxRecovery](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing)
 
-- [ModifyPartition.zip](https://drive.google.com/file/d/1aLex1_xi4AXwg5zc533fxTwTyU5zRZgl/view?usp=sharing)
+- [ModifyPartition.zip](https://drive.google.com/file/d/1RX7wp3-RImC_yDhZxxhAIICUNc7_ocqI/view?usp=drive_link)
 
-- [Magisk](https://github.com/topjohnwu/Magisk/releases/download/v27.0/Magisk-v27.0.apk)
-
-- [mountmodule](mountmodule.zip)
 
 ### Notes
 > [!WARNING]  
@@ -38,20 +35,9 @@
 - Flash [Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing) through your existing recovery
 
 #### Create partitions for Windows
-- Download [ModifyPartition.zip](https://drive.google.com/file/d/1aLex1_xi4AXwg5zc533fxTwTyU5zRZgl/view?usp=sharing) , reboot to recovery and flash it.
+- Download [ModifyPartition.zip](https://drive.google.com/file/d/1RX7wp3-RImC_yDhZxxhAIICUNc7_ocqI/view?usp=drive_link) , reboot to recovery and flash it.
 - Open terminal Type `modify` and wait until the phone reboot and back to recovery 
-- Open Terminal again and run
-```cmd
-chmod -x /cache/format
-. /cache/format
-```
-- Reboot your system and see if Android still works
-
-### Root android and flash magisk module
-> If your Android is not rooted, use the [root guide](root.md) first.
-
-- Flash [mountmodule.zip](mountmodule.zip) in Magisk.
-- Reboot and you will find two folders "Windows" and "Winpe" in internal storage. 
+- Now format ueser data and Reboot to see if Android still works
 
 ## [Next step: Installing Windows](/guide/NEW2-install.md)
 
