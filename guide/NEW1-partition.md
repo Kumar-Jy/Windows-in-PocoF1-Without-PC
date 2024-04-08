@@ -25,14 +25,10 @@
 > DO NOT REBOOT YOUR PHONE! If you think you made a mistake, ask for help in the [Telegram chat](https://t.me/WinOnF1).
 
 
-> [!IMPORTANT]
-> This guide assumes you are rooted, if you aren't, please follow [this guide](root.md) first.
-> Your existing recovery should work, if not,  use the provided recovery image in this guide. 
-
 ### Flash recovery
 > If your existing recovery does not work
 
-- Flash [Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing) through your existing recovery
+- Flash [Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing) .
 
 #### Create partitions for Windows
 - Download [ModifyPartition.zip](https://drive.google.com/file/d/18QZeJH1h6AFCAFodVBpSo8dnj87Tu4Fv/view?usp=drive_link) , reboot to recovery and flash it.
