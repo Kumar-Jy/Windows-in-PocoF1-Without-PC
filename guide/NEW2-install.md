@@ -7,50 +7,25 @@
 ### Prerequisites
 - [Windows on ARM esd](https://worproject.com/esd)
 
-- [WinPE](https://drive.google.com/file/d/1ROmr2ki69QigIVFXJV5fRRSSd7K6h17D/view?usp=drivesdk)
-  
-- [Boot image](https://drive.google.com/drive/folders/1M64iZ3aeNiy0vvhW5refvDj0k0oXyAL1)
-
-- [Drivers](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk)
-  
+- [WinInstallar](https://drive.google.com/file/d/1BlaxJJb9ilBbAQtE1U0-0maeiHSjiX09/view?usp=drive_link)
+    
 
 ### Checking Touchscreen panel type
 - Install [Device Info HW apk](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share)
 - Go to **General** > **Touchscreen**.
 - You should either see **NVT-ts** of **FTS-ts**
-- Download all [boot image](https://drive.google.com/drive/folders/1M64iZ3aeNiy0vvhW5refvDj0k0oXyAL1) accordingly.
+- Download [Wininstallar.zip](https://drive.google.com/file/d/1BlaxJJb9ilBbAQtE1U0-0maeiHSjiX09/view?usp=drive_link) accordingly.
+- Download [Windows ESD image](https://worproject.com/esd) it should be in Download folder of your phone 
 
-> You can check it through recovery terminal also 
+### Setup Installation Process
+- Boot to Recovery Open Terminal and type
 ```cmd
-dmesg | grep dsi_display_bind
+chmod +x /cache/format
+. /cache/format
 ```
-> This should output either `dsi_ebbg_fhd_ft8719_video_display` or `dsi_tianma_fhd_nt36672a_video_display`
->  
-### Mount Windows and WinPE Partition on Android
-> Make sure Windows and Winpe folder are already mounted using the magisk module on the previous page
-
-#### Copy Installation File
-- Download [windowsARM](https://worproject.com/esd), rename it to install.esd, and copy to Internal Storage > Windows
-- Unzip [Driver.zip](https://drive.google.com/file/d/1YBK2fTmgmhzCaPg5luq-GJyGnM6i94Rf/view?usp=drivesdk) and copy to Internal Storage > Windows > Driver
-- Unzip [WinPE.zip](https://drive.google.com/file/d/1lfRh5zd3pcaA7Z9WRsF5FM39NuIbZesS/view?usp=sharing) and copy all internal files/folder from it to Internal Storage -> Winpe
-> [!Note]
-> Be sure all copied file/folder is in the right place and name must be exectly as mentioned above. else installation will not start.
- 
-#### Backup important partitions
-Reboot to Recovery and make a backup of boot, EFS, Modem and Persist.
-
-### Running WinPe
-- In your recovery, flash **PEboot image** to your boot partition, then reboot.
-- Select  *UEFI OS* (it should be on #4* or *#3*) by pressing vol up and press power button to continue boot.
-
-### Windows and Driver installation
-> Once in Winpe, type ``` C:\install ``` on command prompt and press enter.
-- It will take aprox 5 minutes and then automatically shutdown .
-
-#### Boot into Windows
-- Press Power + Vol Up to reboot to recovery
-- Flash > **setup Windows image file** to the boot partition and reboot your device
-- Windows will start booting .
+- Now flash Wininstallar zip file and wait till process complete (have patent it will take somtime)
+- Reboot your phone and let it continue boot.
+- Windows installation process will start automaticly and then phone automaticly restart to setup windows.
 
 ### Setting up Windows
 Your device will now set up Windows. This will take some time. It will eventually reboot, and after that the initial setup (oobe) should launch.
