@@ -7,14 +7,14 @@
 ### Prerequisites
 - [Windows on ARM esd](https://worproject.com/esd)
 
-- [WinInstallar](https://drive.google.com/file/d/1BlaxJJb9ilBbAQtE1U0-0maeiHSjiX09/view?usp=drive_link)
+- [WinInstallar](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link)
     
 
 ### Checking Touchscreen panel type
 - Install [Device Info HW apk](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share)
 - Go to **General** > **Touchscreen**.
 - You should either see **NVT-ts** of **FTS-ts**
-- Download [Wininstallar.zip](https://drive.google.com/file/d/1BlaxJJb9ilBbAQtE1U0-0maeiHSjiX09/view?usp=drive_link) accordingly.
+- Download [Wininstallar.zip](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link) accordingly.
 - Download [Windows ESD image](https://worproject.com/esd) it should be in Download folder of your phone 
 
 ### Setup Installation Process
