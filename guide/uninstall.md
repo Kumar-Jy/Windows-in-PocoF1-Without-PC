@@ -5,7 +5,7 @@
 ## Uninstallation
 
 ### Why is this needed?
-If you want to uninstall windows use this instead of deleting partitions manually to avoid human error + writing a whole dedicated guide to just uninstalling.
+If you want to uninstall windows use this instead of deleting partitions manually to avoid human error + writing a whole dedicated guide just for uninstalling.
 
 If you want to relock your bootloader you'll need your partition table to be stock.
 
