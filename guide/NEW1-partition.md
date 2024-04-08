@@ -9,7 +9,7 @@
 
 - [OfoxRecovery](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing)
 
-- [ModifyPartition.zip](https://drive.google.com/file/d/1RX7wp3-RImC_yDhZxxhAIICUNc7_ocqI/view?usp=drive_link)
+- [ModifyPartition.zip](https://drive.google.com/file/d/18QZeJH1h6AFCAFodVBpSo8dnj87Tu4Fv/view?usp=drive_link)
 
 
 ### Notes
@@ -35,7 +35,7 @@
 - Flash [Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing) through your existing recovery
 
 #### Create partitions for Windows
-- Download [ModifyPartition.zip](https://drive.google.com/file/d/1RX7wp3-RImC_yDhZxxhAIICUNc7_ocqI/view?usp=drive_link) , reboot to recovery and flash it.
+- Download [ModifyPartition.zip](https://drive.google.com/file/d/18QZeJH1h6AFCAFodVBpSo8dnj87Tu4Fv/view?usp=drive_link) , reboot to recovery and flash it.
 - Open terminal Type `modify` and wait until the phone reboot and back to recovery 
 - Now format ueser data and Reboot to see if Android still works
 
