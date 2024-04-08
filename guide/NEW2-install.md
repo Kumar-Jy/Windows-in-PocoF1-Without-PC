@@ -17,7 +17,7 @@
 - Go to **General** > **Touchscreen**.
 - You should either see **NVT-ts** of **FTS-ts**
 - Download [Wininstallar.zip](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link) accordingly.
-- Download [Windows ESD image](https://worproject.com/esd) it should be in Download folder of your phone 
+- Download [Windows ESD image](https://worproject.com/esd) it should be in `Download` folder of your phone 
 
 ### Setup Installation Process
 - Boot to recovery open terminal and type
