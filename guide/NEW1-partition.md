@@ -32,7 +32,8 @@
 
 #### Create partitions for Windows
 - Download [ModifyPartition.zip](https://drive.google.com/file/d/18QZeJH1h6AFCAFodVBpSo8dnj87Tu4Fv/view?usp=drive_link) , reboot to recovery and flash it.
-- Open terminal Type `modify` and wait until the phone reboot and back to recovery 
+- Unmount all except cache
+- Open terminal Type `modify` and wait until phone reboot and back to recovery 
 - Now format ueser data and Reboot to see if Android still works
 
 ## [Next step: Installing Windows](/guide/NEW2-install.md)
