@@ -26,7 +26,7 @@ chmod +x /cache/format
 . /cache/format
 ```
 - Now flash Wininstallar zip file and wait till process complete (have patent it will take somtime)
-- Reboot your phone and let it continue boot.
+- Reboot to system and let it continue boot.
 - Windows installation process will start automaticly and then phone automaticly restart to setup windows.
 
 ### Setting up Windows
