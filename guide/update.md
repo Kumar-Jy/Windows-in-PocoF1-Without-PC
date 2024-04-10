@@ -6,7 +6,7 @@
 
 ### Prerequisites
   
-- [Drivers](https://github.com/n00b69/woaberyllium/releases/tag/Drivers)
+- [Drivers](https://drive.google.com/file/d/1zSuz4eRdher-ITjuhL3VtX3gOXnM3gUv/view?usp=drivesdk)
   
 
 
