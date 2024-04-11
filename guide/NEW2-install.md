@@ -9,13 +9,13 @@
 ### Prerequisites
 - [Windows on ARM esd](https://worproject.com/esd) `(Select - Version: 11 Build: 22631.2861 Architecture: ARM64 Edition: CLIENT Language: select your language)`
 
-- [WinInstallar](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link)
+- [WinInstaller](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link)
     
 
 ### Checking Touchscreen panel type
 - On your android install [Device Info HW apk](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share) , open app and go to **General** > **Touchscreen**.
 - You should either see **NVT-ts** of **FTS-ts**
-- Download [Wininstallar.zip](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link) accordingly.
+- Download [WinInstaller.zip](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link) accordingly.
 - Download [Windows ESD image](https://worproject.com/esd) it should be in `Download` folder of your phone 
 
 ### Setup Installation Process
@@ -24,7 +24,7 @@
 chmod +x /cache/format
 . /cache/format
 ```
-- Now flash Wininstallar zip file and wait till process complete (have patent it will take somtime)
+- Now flash Wininstaller zip file and wait till process complete (have patent it will take somtime)
 - Reboot to system and let it continue boot.
 - Windows installation process will start automaticly and then phone automaticly restart to setup windows.
 
