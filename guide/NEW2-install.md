@@ -18,18 +18,10 @@
 - Download [WinInstaller.zip](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link) accordingly.
 - Download [Windows ESD image](https://worproject.com/esd) it should be in `Download` folder of your phone 
 
-### Setup Installation Process
-- Boot to recovery open terminal and type
-```cmd
-chmod +x /cache/format
-. /cache/format
-```
-- Now flash Wininstaller zip file and wait till process complete (have patent it will take somtime)
-- Reboot to system and let it continue boot.
-- Windows installation process will start automaticly and then phone automaticly restart to setup windows.
+### Windows Installation
+- Reboot to recovery and flash Wininstaller zip and wait till process complete.
+- This will take some time. It will eventually reboot, and after that the initial setup (oobe) should launch.
 
-### Setting up Windows
-Your device will now set up Windows. This will take some time. It will eventually reboot, and after that the initial setup (oobe) should launch.
 
 > [!Note]
 > ◆ To skip the Microsoft Account login, use "g" for the email and password. Windows will then let you make a local account.
