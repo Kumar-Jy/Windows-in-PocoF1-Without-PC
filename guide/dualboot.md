@@ -16,7 +16,7 @@
 This guide assumes you are rooted, if you aren't, please follow [this guide](root.md) first.
 
 ### Setup - Android
-- Reboot to recovery, restore boot, and reboot to system. 
+- Reboot to recovery, restore boot.img from 'sdcard/backup' folder, and reboot to system. 
 - Download and install the [WOA Helper app](https://github.com/n00b69/woaberyllium/releases/download/Dualboot/woahelper.apk), then open it and grant it root access.
 - Download the [UEFI](https://github.com/n00b69/woaberyllium/releases/tag/UEFI) image for your panel and place it inside the folder named `UEFI` in your internal storage.
 - Press the `Mount Windows` button to mount Windows to your internal storage at `/sdcard/Windows`
