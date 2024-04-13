@@ -4,12 +4,13 @@
 
 ## Installing Windows
 :no_entry_sign: Don't try if you have not followed this [partition](NEW1-partition.md) guide
-- it assumes `esp on 21`, `pe on 22` and `win on 24` 
+- it assumes `esp on 21`, `pe on 22` and `win on 24`
+- your phone must be decrypted.
 
 ### Prerequisites
 - [Windows on ARM esd](https://worproject.com/esd) `(Select - Version: 11 Build: 22631.2861 Architecture: ARM64 Edition: CLIENT Language: select your language)`
-
 - [WinInstaller](https://drive.google.com/drive/folders/1RP-AsQ4MkVYeHJFr3HqAPn3rP7rY12-V?usp=drive_link)
+
     
 
 ### Checking Touchscreen panel type
