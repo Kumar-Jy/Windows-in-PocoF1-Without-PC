@@ -7,9 +7,7 @@
 ### Prerequisites
 - A brain (most important of all)
 
-- [OfoxRecovery](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing)
-
-- [ModifyPartition.zip](https://drive.google.com/file/d/18QZeJH1h6AFCAFodVBpSo8dnj87Tu4Fv/view?usp=drive_link)
+- [OfoxRecovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/Ofox-beryllium-pe.img)
 
 
 ### Notes
@@ -26,15 +24,16 @@
 
 
 ### Flash recovery
-> If your existing recovery does not work
-
-- Flash [Ofoxrecovery.zip](https://drive.google.com/file/d/1ZMjx6lC7uB1bTy6NXKjwKkLmKUEywKxu/view?usp=sharing) .
+- Flash [Ofox-beryllium-pe.img](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/Ofox-beryllium-pe.img) either through your existing recovery or through fastboot.
 
 #### Create partitions for Windows
 - Download [ModifyPartition.zip](https://drive.google.com/file/d/18QZeJH1h6AFCAFodVBpSo8dnj87Tu4Fv/view?usp=drive_link) , reboot to recovery and flash it.
 - Unmount all except cache
-- Open terminal Type `modify` and wait until phone reboot and back to recovery 
-- Now format ueser data and Reboot to see if Android still works
+- Open terminal Type `partition [WINDOWS SIZE IN GB]`
+- Make sure you do not add GB at the end, just the number
+- If it asks you to run it once again, do so
+- Reboot to check if Android still works.
+- If it doesn't boot, format ueser data and Reboot
 
 ## [Next step: Installing Windows](/guide/NEW2-install.md)
 
