@@ -27,8 +27,6 @@
 - Flash [Ofox-beryllium-pe.img](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/Ofox-beryllium-pe.img) either through your existing recovery or through fastboot.
 
 #### Create partitions for Windows
-- Download [ModifyPartition.zip](https://drive.google.com/file/d/18QZeJH1h6AFCAFodVBpSo8dnj87Tu4Fv/view?usp=drive_link) , reboot to recovery and flash it.
-- Unmount all except cache
 - Open terminal Type `partition [WINDOWS SIZE IN GB]`
 - Make sure you do not add GB at the end, just the number
 - If it asks you to run it once again, do so
