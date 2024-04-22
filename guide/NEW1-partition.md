@@ -17,6 +17,8 @@
 > Do not run the same command twice unless specified.
 > 
 > Do not run all commands at once, execute them in order!
+>
+> follow step by step guide, don't jump or skip any steps
 > 
 > YOU CAN BREAK YOUR DEVICE WITH THE COMMANDS BELOW IF YOU DO THEM WRONG!!!
 > 
