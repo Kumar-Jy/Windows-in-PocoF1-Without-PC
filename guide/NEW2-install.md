@@ -5,6 +5,7 @@
 ## Installing Windows
 :no_entry_sign: Don't try if you have not followed this [partition](NEW1-partition.md) guide
 - it assumes `esp on 21`, `pe on 22` and `win on 24`
+- if you have same partition table you can do this.
 - your phone must be decrypted.
 
 ### Prerequisites
@@ -17,7 +18,7 @@
 - On your android install [Device Info HW apk](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share) , open app and go to **General** > **Touchscreen**.
 - You should either see **NVT-ts** of **FTS-ts**
 - Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Win-Installar) accordingly.
-- Download [Windows ESD image](https://worproject.com/esd) it should be in `Download` folder of your phone 
+- Download [Windows ESD image](https://worproject.com/esd) it should be in `Download` folder of your phone memory.
 
 ### Windows Installation
 - Reboot to recovery and flash Wininstaller zip and wait till process complete.
