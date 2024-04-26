@@ -1,12 +1,11 @@
-<img align="right" src="https://github.com/n00b69/woaberyllium/blob/main/beryllium.png" width="350" alt="Windows 11 running on beryllium">
-
+<img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 # Running Windows on the Xiaomi Pocophone F1
 
 ## Updating drivers
 
 ### Prerequisites
   
-- [Drivers](https://drive.google.com/file/d/1p6HFWP8A-gDXS3cB-Vkn0kRzVd0wEedL/view?usp=drivesdk)
+- [Drivers](https://github.com/n00b69/woa-beryllium/releases/tag/Drivers)
   
 
 
