@@ -1,4 +1,4 @@
-<img align="right" src="https://github.com/n00b69/woaberyllium/blob/main/beryllium.png" width="350" alt="Windows 11 running on beryllium">
+<img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
 
 # Running Windows on the Xiaomi Pocophone F1
@@ -6,29 +6,41 @@
 ## Troubleshooting Issues
 > Below you will find a list of common problems and their solutions
 
-## Touch does not work after sleep
-Reboot your device. This issue seems to not have a fix.
+### Installation failed
+Seems you have not followed proper instruction. 
+Download _windows esd image_ only from mentioned link and it must be in _Download_ folder of your phone's internal storage. 
 
-## Cannot mount Windows in Android
-> This is caused when you shut down Windows instead of restarting it.
+### Touch does not work after sleep
+> Reboot your device. This issue seems to not have a fix.
+#
+### Cannot write to Windows in Android
+> This is caused by shutting down Windows instead of restarting it.
 - To solve this, boot to Windows and then press "restart", then as the screen shuts off boot to TWRP and from there load up Android.
+- Or, disable hibernation in Windows using [this](https://github.com/n00b69/woa-beryllium/releases/tag/1.0) script 
 > Alternatively, if you have already set up the Switch to Android app, simply use this to switch to Android.
+#
+### USB does not work
+Enable USB host mode using this guide :-.
+> [!Warning]
+> Disable USB host mode if you use a poweref USB hub, as this can irreversibly damage your device. If you don't use a powered USB hub, enable USB host mode or you will not be able to use any USB devices.
 
-## USB does not work
-Enable USB host mode using the optional [post install guide](postinstall.md).
-
-## DISM Error:87 The add-driver option is unkown
+Run [USB Host Control](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/USBHost/USB.Host.Mode.Control.V4.0.vbs) to enable/disable USB host mode, confirm that you want to disable/enable USB host mode and then confirm the reboot
+#
+### DISM Error:87 The add-driver option is unkown
 This usually means that you have an unclean Windows image with some other drivers. You need to get a clean Windows image (which means you didn't follow instructions).
-
-## 0xc000021a BSOD
-This usually means that winlogon.exe has failed, and you may need to reapply the Windows image.
-
-## The computer restarted unexpectedly or encountered an unexpected error
-If you stumble upon this error, you may need to redeploy the Windows image. Use the [reinstall guide](reinstall.md) for this.
-
-## INACCESSIBLE_BOOT_DEVICE BSOD
-This Blue Screen of Death likely means some broken driver installation. To fix this, reinstall the drivers using the [reinstall guide](reinstall.md).
-
-## My screen is dimmer than before
+#
+### 0xc000021a BSOD
+This usually means that winlogon.exe has failed, and you may need to reinstall Windows.
+#
+### The computer restarted unexpectedly or encountered an unexpected error
+If you stumble upon this error, you may need to reinstall Windows. Use the [Installation guide](Installation.md)
+#
+### INACCESSIBLE_BOOT_DEVICE BSOD
+This Blue Screen of Death likely means some broken driver installation. To fix this, reinstall the drivers using the [Installation guide](Installation.md).
+#
+### My screen is dimmer than before
 A weird workaround for this... is to just press the power button to put the phone to sleep, and again to wake it. Just works for some reason.
-
+#
+### Wifi and mobile data not working
+Restart windows. if still not working, restore modem and persist from recovery.
+#
