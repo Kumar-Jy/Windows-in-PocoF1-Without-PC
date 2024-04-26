@@ -4,7 +4,7 @@
 
 ## Installing Windows
 :no_entry_sign: Don't try if you have not followed this [partition](NEW1-partition.md) guide
-- it assumes `esp on 21`, `win on 23` and `esp on 24`
+- it assumes `esp on 21`, `win on 23` and `pe on 24`
 - if you have same partition table you can do this.
 - your phone must be decrypted.
 
