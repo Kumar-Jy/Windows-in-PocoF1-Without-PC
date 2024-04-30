@@ -52,7 +52,7 @@ ${\color{darkorange}2nd\space Step - Installation}$
 - Run the new shortcut on your desktop (you can also pin it to your start menu / taskbar for ease of access)
 - If it prompt vcruntime140.dll error install [Microsoft Visual C++](https://aka.ms/vs/17/release/vc_redist.arm64.exe).
 #### _Switch to Windows_
-- Download and install the WOA Helper app, open it and grant root access.
+- Download and install the [WOA Helper app](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA), open it and grant root access.
 - Download the [UEFI](https://github.com/n00b69/woa-beryllium/releases/tag/UEFI) image for your panel and place it inside the folder named `UEFI` in your internal storage.
 - Return to the WOA Helper app and press the `Quickboot` button.
 #### ${\color{red}Note}$ :- if above steps failed follow [this](https://github.com/n00b69/woa-beryllium/blob/main/guide/dualboot.md) guide
