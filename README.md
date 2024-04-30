@@ -18,6 +18,8 @@ _This project is in an early stage, all the files here have been contributed by 
 
 
 ## ${\color{darkorange}Miscellaneous}$
+- [Dual Boot Setup](https://github.com/n00b69/woa-beryllium/blob/main/guide/dualboot.md)
+
 - [Project Status](guide/status.md)
 
 - [Additional Materials](guide/materials.md)
