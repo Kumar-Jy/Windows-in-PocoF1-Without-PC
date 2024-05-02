@@ -40,7 +40,7 @@ ${\color{darkorange}2nd\space Step - Installation}$
 
 ### ${\color{darkorange}2nd\space Step - Installation}$
 - Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Win-Installar) according to your touch panel.
-- Download [Windows ESD file](http://dl.delivery.mp.microsoft.com/filestreamingservice/files/48c0db41-e529-47bb-8049-b8d2f2708271/22631.2861.231204-0538.23H2_NI_RELEASE_SVC_REFRESH_CLIENTCONSUMER_RET_A64FRE_en-us.esd) it must be downloaded from this link and places in `Download` folder of your phone memory, else installation failed.
+- Download [Windows ESD file](http://dl.delivery.mp.microsoft.com/filestreamingservice/files/48c0db41-e529-47bb-8049-b8d2f2708271/22631.2861.231204-0538.23H2_NI_RELEASE_SVC_REFRESH_CLIENTCONSUMER_RET_A64FRE_en-us.esd) (it must be downloaded from this link only) and copy it to `Download` folder of your phone memory, else installation failed.
 - Reboot to recovery flash Wininstaller.zip and wait till process complete.
 - This will take some time. It will eventually reboot, and after that the initial setup (oobe) should launch.
 #
