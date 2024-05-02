@@ -9,26 +9,28 @@ ${\color{darkorange}2nd\space Step - Installation}$
 #
 ### Prerequisites
 - _A Working Brain (most important of all)_
-- [_Orange Fox Recovery_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/Ofox-beryllium-pe.img)
+- [_Moded Ofox Recovery_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/ModedPE-Ofox-beryllium.zip)
 - [_Windows ESD Image_](http://dl.delivery.mp.microsoft.com/filestreamingservice/files/48c0db41-e529-47bb-8049-b8d2f2708271/22631.2861.231204-0538.23H2_NI_RELEASE_SVC_REFRESH_CLIENTCONSUMER_RET_A64FRE_en-us.esd)
 - [_Win Installer zip_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Win-Installar)
 
 #
 ### ${\color{red}WARNING}$
 > - _All your data will be erased ! Back up now if needed._
-> 
-> - _Do not run the same command twice unless specified._
 >
-> - _Follow step by step guide, don't jump or skip any steps_
+> - _Backup Important Partition (Boot, EFS, Modem and Persist) and copy it to outside phone memory_
+>
+> - _Do not flash/run the same file/command twice unless specified._
+>
+> - _Follow step by step guide, don't jump or skip any step._
 > 
-> - _YOU CAN BREAK YOUR DEVICE WITH THE COMMANDS BELOW IF YOU DO THEM WRONG!!!_
+> - _YOU CAN BREAK YOUR DEVICE WITH THE COMMANDS/FILE BELOW IF YOU DO THEM WRONG!!!_
 > 
 > - _DO NOT REBOOT YOUR PHONE! If you think you made a mistake, ask for help in the [Telegram chat](https://t.me/WinOnF1)._
 #
 
 
 ### **${\color{darkorange}1st\space Step - Partitioning}$**
-- Flash [Ofox-beryllium-pe.img](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/Ofox-beryllium-pe.img) either through your existing recovery or through fastboot.
+- Flash [Moded Ofox Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/ModedPE-Ofox-beryllium.zip) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
 - Type ``` partition $ ``` on recovery terminal _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40` (do not add GB at the end.)_
 - If it asks you to run it once again, do so
 - Type ``` panel ``` and note down output. it is necessary to download installation file accordingly. 
