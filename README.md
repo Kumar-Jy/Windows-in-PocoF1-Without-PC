@@ -3,7 +3,7 @@
 # _Windows Installation Guide for Xiaomi Pocophone F1 [Without PC]_
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
-_[Video link](https://youtu.be/qMGIUX-rjUQ?si=3-OcBZP4CE0ZS2P0)_
+_[Video link]()_
 
 ## ⚠️ ${\color{red}Warning}$
 _We're not responsible for any damage. Do it on your own risk._
