@@ -17,7 +17,7 @@ If you want to relock your bootloader you'll need your partition table to be sto
 > [!Important]
 > This will delete all your Android data.
 #### [Method - 1]
-- Flash [Moded Ofox Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery) , open terminal and type `restore` , reboot to android 
+- Flash [Moded Ofox Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery) , open terminal and type `restore` , Format userdata and reboot to android.
 #### [Method - 2]
 - Boot to recovery and flash [Restore.zip](https://drive.google.com/file/d/1u8TOgzLl93_TPm3LvdNVQz2m0MO-JW67/view?usp=drive_link)
 - Reboot to recovery again and select Wipe > Format Data > Type `yes`
