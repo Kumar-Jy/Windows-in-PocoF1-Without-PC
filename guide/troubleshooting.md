@@ -5,11 +5,13 @@
 
 ## Troubleshooting Issues
 > Below you will find a list of common problems and their solutions
-
+#
+### Sound and Rotation not Working
+> Reboot to recovery and flash latest [UEFI](https://github.com/n00b69/woa-beryllium/releases/tag/UEFI)
 ### Installation failed
 Seems you have not followed proper instruction. 
-Download _windows esd image_ only from mentioned link and it must be in _Download_ folder of your phone's internal storage. 
-
+Download installation file only from mentioned link and you Phone memory must have at least 6GB free space. 
+#
 ### Touch does not work after sleep
 > Reboot your device. This issue seems to not have a fix.
 #
@@ -26,9 +28,6 @@ Enable USB host mode using this guide :-.
 
 Run [USB Host Control](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/USBHost/USB.Host.Mode.Control.V4.0.vbs) to enable/disable USB host mode, confirm that you want to disable/enable USB host mode and then confirm the reboot
 #
-### DISM Error:87 The add-driver option is unkown
-This usually means that you have an unclean Windows image with some other drivers. You need to get a clean Windows image (which means you didn't follow instructions).
-#
 ### 0xc000021a BSOD
 This usually means that winlogon.exe has failed, and you may need to reinstall Windows.
 #
@@ -36,7 +35,7 @@ This usually means that winlogon.exe has failed, and you may need to reinstall W
 If you stumble upon this error, you may need to reinstall Windows. Use the [Installation guide](Installation.md)
 #
 ### INACCESSIBLE_BOOT_DEVICE BSOD
-This Blue Screen of Death likely means some broken driver installation. To fix this, reinstall the drivers using the [Installation guide](Installation.md).
+This Blue Screen of Death likely means some broken driver installation. To fix this, reinstall windows using the [Installation guide](Installation.md).
 #
 ### My screen is dimmer than before
 A weird workaround for this... is to just press the power button to put the phone to sleep, and again to wake it. Just works for some reason.
