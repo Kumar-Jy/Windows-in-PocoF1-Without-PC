@@ -10,8 +10,7 @@ ${\color{darkorange}2nd\space Step - Installation}$
 ### Prerequisites
 - _A Working Brain (most important of all)_
 - [_Moded Ofox Recovery_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/ModedPE-Ofox-beryllium.zip)
-- [_Windows ESD Image_](http://dl.delivery.mp.microsoft.com/filestreamingservice/files/48c0db41-e529-47bb-8049-b8d2f2708271/22631.2861.231204-0538.23H2_NI_RELEASE_SVC_REFRESH_CLIENTCONSUMER_RET_A64FRE_en-us.esd)
-- [_Win Installer zip_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Win-Installar)
+- [_Win Installer zip_](https://drive.google.com/file/d/1n1p0ih5tAtWOVgyR5vd7vsjs7by3PDuk/view?usp=drivesdk)
 
 #
 ### ${\color{red}WARNING}$
@@ -32,17 +31,14 @@ ${\color{darkorange}2nd\space Step - Installation}$
 ### **${\color{darkorange}1st\space Step - Partitioning}$**
 - Flash [Moded Ofox Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/ModedPE-Ofox-beryllium.zip) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
 - Type ``` partition $ ``` on recovery terminal _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40` (do not add GB at the end.)_
-- If it asks you to run it once again, do so
-- Type ``` panel ``` and note down output. it is necessary to download installation file accordingly. 
-- Reboot to check if Android still works.
-- If Android doesn't boot, format userdata and Reboot.
+- If it asks you to run it once again, do so 
+- Reboot to check if Android still works. If it doesn't boot, format userdata and Reboot.
 #
 
 ### ${\color{darkorange}2nd\space Step - Installation}$
-- Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Win-Installar) according to your touch panel.
-- Download [Windows ESD file](http://dl.delivery.mp.microsoft.com/filestreamingservice/files/48c0db41-e529-47bb-8049-b8d2f2708271/22631.2861.231204-0538.23H2_NI_RELEASE_SVC_REFRESH_CLIENTCONSUMER_RET_A64FRE_en-us.esd) (it must be downloaded from this link only) and copy it to `Download` folder of your phone memory, else installation failed.
-- Reboot to recovery flash Wininstaller.zip and wait till process complete.
-- This will take some time. It will eventually reboot, and after that the initial setup (oobe) should launch.
+- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1n1p0ih5tAtWOVgyR5vd7vsjs7by3PDuk/view?usp=drivesdk) (_at least 6GB free space in phone memory required for flashing_)
+- That's all , 
+ You don't need to touch you phone just sit back and watch all installation process start automatically and phone will reboot to windows setup.
 #
 
 #### ${\color{red}Note}$ :- If Sound and Rotation not working flash latest [UEFI](https://github.com/n00b69/woa-beryllium/releases/tag/UEFI) and it will start working.
@@ -50,9 +46,8 @@ ${\color{darkorange}2nd\space Step - Installation}$
 #
 ### ${\color{darkorange}Last\space step\space -Dual\space Boot\ Setup}$
 #### _Switch to Android_
-- Navigate to C:\sta and create a shortcut of `sta.exe` to your desktop.
-- Run the new shortcut on your desktop (you can also pin it to your start menu / taskbar for ease of access)
-- If it prompt vcruntime140.dll error install [Microsoft Visual C++](https://aka.ms/vs/17/release/vc_redist.arm64.exe).
+- Navigate to `` C:\sta `` and Install ` VC.exe `
+- create a shortcut of `sta.exe` to your desktop and Run it (you can also pin it to your start menu / taskbar for ease of access)
 #### _Switch to Windows_
 - Download and install the [WOA Helper app](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA), open it and grant root access.
 - Download the [UEFI](https://github.com/n00b69/woa-beryllium/releases/tag/UEFI) image for your panel and place it inside the folder named `UEFI` in your internal storage.
