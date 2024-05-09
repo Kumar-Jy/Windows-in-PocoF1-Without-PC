@@ -1,22 +1,22 @@
 <img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
-# _Windows Installation Guide for Xiaomi Pocophone F1 [Without PC]_
+# _Windows Installation Guide for Pocophone F1 [Without PC]_
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
 _[Video link]()_
+#
 
 ## ⚠️ ${\color{red}Warning}$
-_We're not responsible for any damage. Do it on your own risk._
+- _We're not responsible for any damage. Do it on your own risk._
+- _This project is in an early stage, all the files here have been contributed by other users, follow all the steps carefully._
 
-_This project is in an early stage, all the files here have been contributed by other users, follow all the steps carefully._
-
-
+#
 ## ${\color{darkorange}Get\space started}$
 - [Installation Instructions](guide/Installation.md)
 
 - [Troubleshooting](guide/troubleshooting.md)
 
-
+#
 ## ${\color{darkorange}Miscellaneous}$
 - [Dual Boot Setup](https://github.com/n00b69/woa-beryllium/blob/main/guide/dualboot.md)
 
@@ -27,7 +27,7 @@ _This project is in an early stage, all the files here have been contributed by 
 - [Update drivers](guide/update.md)
 
 - [Uninstall instructions](guide/uninstall.md)
-
+#
 ## ${\color{darkorange}Contributors}$
 [<img alt="adomerlee" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/109386069?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/adomerlee)
 [<img alt="Morc" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13377926?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/TheMorc)
