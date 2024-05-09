@@ -13,7 +13,7 @@
 
 #### Updating drivers
 - Download Driver.zip, extract it and run onlineupdater.cmd as administrator, your phone will start updating new driver.
-- Reboot and flash latest UEFI.
+- Reboot to recovery and flash latest UEFI.
 - enjoy.
 
 ## Finished!
