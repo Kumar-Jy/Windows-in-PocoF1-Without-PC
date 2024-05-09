@@ -1,14 +1,14 @@
 <img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
 
-# Windows installation guide for PocoF1
+# Windows installation in PocoF1 [Without PC]
 
 ## Additional materials
 > Below you will find a list of tweaks and materials for Windows on your ARM device
 
 ### List of supported apps/games
 > This is by no means a comprehensive list, it simply lists apps/games that have been tested by the community
-[The link can be found here](https://docs.google.com/spreadsheets/d/1XYuoySgYQE0HL573sA-0RGMX7I4lt5rWJuQ8Z8yRJNY/edit?usp=drivesdk)
+The link can be found [here](https://docs.google.com/spreadsheets/d/1XYuoySgYQE0HL573sA-0RGMX7I4lt5rWJuQ8Z8yRJNY/edit?usp=drivesdk)
 
 > You can also find a list of dedicated ARM software at this [link](https://armrepo.ver.lt/)
 
@@ -36,7 +36,7 @@ Follow the instructions by Massgravel [here](https://github.com/massgravel/Micro
 #
 ### How to use the Flashlight
 - Download [Flashlight.7z](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/1.0/flashlight_fix.7z) and unzip to any folder
-> Run flashlight.exe to enable the flashlight, Press any key to disable it
+- Run flashlight.exe to enable the flashlight, Press any key to disable it
 
 
 
