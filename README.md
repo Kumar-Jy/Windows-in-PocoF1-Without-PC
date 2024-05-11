@@ -1,32 +1,28 @@
 <img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
-# _Windows Installation Guide for Pocophone F1 [Without PC]_
+# _Windows Installation Guide for PocoF1 [Without PC]_
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
-_[Video link](https://youtu.be/e0fF1_bKQYE)_
+[![download](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/assets/20044626/3abc8b52-c5c6-4495-b623-d1312195d639)](https://youtu.be/e0fF1_bKQYE)
 #
-
 ## ⚠️ ${\color{red}Warning}$
 - _We're not responsible for any damage. Do it on your own risk._
-- _This project is in an early stage, all the files here have been contributed by other users, follow all the steps carefully._
+- _This project is in an early stage, follow all the steps carefully._
 
 #
 ## ${\color{darkorange}Get\space started}$
-- [Installation Instructions](guide/Installation.md)
+- [_Installation Instructions_](guide/Installation.md)
 
-- [Troubleshooting](guide/troubleshooting.md)
-
+- [_Update Drivers_](guide/update.md)
+  
+- [_Troubleshooting_](guide/troubleshooting.md)
 #
 ## ${\color{darkorange}Miscellaneous}$
-- [Dual Boot Setup](https://github.com/n00b69/woa-beryllium/blob/main/guide/dualboot.md)
+- [_Project Status_](guide/status.md)
 
-- [Project Status](guide/status.md)
+- [_Additional Materials_](guide/materials.md)
 
-- [Additional Materials](guide/materials.md)
-
-- [Update drivers](guide/update.md)
-
-- [Uninstall instructions](guide/uninstall.md)
+- [_Uninstall Instructions_](guide/uninstall.md)
 #
 ## ${\color{darkorange}Contributors}$
 [<img alt="adomerlee" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/109386069?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/adomerlee)
