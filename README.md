@@ -3,7 +3,7 @@
 # _Windows Installation Guide for Pocophone F1 [Without PC]_
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
-_[Video link]()_
+_[Video link](https://youtu.be/e0fF1_bKQYE)_
 #
 
 ## ⚠️ ${\color{red}Warning}$
