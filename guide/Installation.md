@@ -11,7 +11,7 @@
 #
 ### Prerequisites
 - _A Working Brain (most important of all)_
-- [_Moded Ofox Recovery_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/ModedPE-Ofox-beryllium.zip)
+- [_Moded Ofox Recovery_](https://drive.google.com/file/d/18TtK7bqHF24mQ8xXlSeBlJUeAjzFuTOV/view?usp=drive_link)
 - [_Win Installer zip_](https://drive.google.com/file/d/1n1p0ih5tAtWOVgyR5vd7vsjs7by3PDuk/view?usp=drivesdk)
 
 #
@@ -31,7 +31,7 @@
 
 
 ### **${\color{darkorange}1st\space Step - Partitioning}$**
-- Flash [Moded Ofox Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Moded-Ofox-Recovery/ModedPE-Ofox-beryllium.zip) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
+- Flash [Moded Ofox Recovery](https://drive.google.com/file/d/18TtK7bqHF24mQ8xXlSeBlJUeAjzFuTOV/view?usp=drive_link) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
 - Type ``` partition $ ``` on recovery terminal _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40` (do not add GB at the end.)_
 - If it asks you to run it once again, do so 
 - Reboot to check if Android still works. If it doesn't boot, format userdata and Reboot.
