@@ -35,7 +35,7 @@
 #### ${\color{red}Note}$ :- 
 > - For Sound and Rotation flash latest [UEFI](https://github.com/n00b69/woa-beryllium/releases/tag/UEFI) after windows setup.
 > - Restore modem backup if cellular data not working.
-> - If you have to reflash WinInstaller, first flash/restore android boot.img
+> - If you have to re-flash WinInstaller, first flash/restore modem and android boot.img
 > - If you have not taken backup of modem and efs just copy `backup` folder from internal storage or from `cache` folder to MemoryCard/PenDrive.
 
 #
