@@ -10,7 +10,7 @@
 ### Prerequisites
 - _A Working Brain (most important of all)_
 - [_Moded Ofox Recovery_](https://drive.google.com/file/d/18TtK7bqHF24mQ8xXlSeBlJUeAjzFuTOV/view?usp=drive_link)
-- [_Win Installer zip_](https://drive.google.com/file/d/1n1p0ih5tAtWOVgyR5vd7vsjs7by3PDuk/view?usp=drivesdk)
+- [_Win Installer zip_](https://drive.google.com/file/d/11oHC2bIGH9OqEbh1CbLmEYfpWir3u8Bx/view?usp=drive_link)
 #
 ### ${\color{red}[WARNING]}$
 > - _All your data will be erased ! Back up now if needed._
@@ -23,17 +23,20 @@
 
 ### **${\color{darkorange}1st\space Step - Partitioning}$**
 - Flash [Moded Ofox Recovery](https://drive.google.com/file/d/18TtK7bqHF24mQ8xXlSeBlJUeAjzFuTOV/view?usp=drive_link) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
-- Type ``` partition $ ``` on recovery terminal _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40` (do not add GB at the end.)_
-- If it asks you to run it once again, do so 
+- Type ``` partition $ ``` on recovery terminal _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40`] (do not add GB at the end.)_
+- If it asks you to run it once again, do so
 - Reboot to check if Android still works. If it doesn't boot, format userdata and Reboot.
 #
 
 ### ${\color{darkorange}2nd\space Step - Installation}$
-- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1n1p0ih5tAtWOVgyR5vd7vsjs7by3PDuk/view?usp=drivesdk) (_at least 6GB free space in phone memory required for flashing_)
+- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/11oHC2bIGH9OqEbh1CbLmEYfpWir3u8Bx/view?usp=drive_link) (_at least 6GB free space in phone memory required for flashing_)
 - That's all , 
  You don't need to touch you phone just sit back and watch all installation process start automatically and phone will reboot to windows setup.
-
-#### ${\color{red}Note}$ :- If Sound and Rotation not working flash latest [UEFI](https://github.com/n00b69/woa-beryllium/releases/tag/UEFI) and it will start working.
+#### ${\color{red}Note}$ :- 
+> - For Sound and Rotation flash latest [UEFI](https://github.com/n00b69/woa-beryllium/releases/tag/UEFI) after windows setup.
+> - Restore modem backup if cellular data not working.
+> - If you have to reflash WinInstaller, first flash/restore android boot.img
+> - If you have not taken backup of modem and efs just copy `backup` folder from internal storage or from `cache` folder to MemoryCard/PenDrive.
 
 #
 ### ${\color{darkorange}Last\space step\space -Dual\space Boot\ Setup}$
