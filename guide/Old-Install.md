@@ -3,7 +3,7 @@
 # Windows installation guide for PocoF1
 
 ## Installing Windows
-:no_entry_sign: Don't try if you have not followed this [partition](NEW1-partition.md) guide
+:no_entry_sign: Don't try if you have not followed this [partition](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/blob/main/guide/Installation.md#colordarkorange1stspace-step---partitioning) guide
 - it assumes `esp on 21`, `win on 23` and `pe on 24`
 - if you have same partition table you can do this.
 - your phone must be decrypted.
