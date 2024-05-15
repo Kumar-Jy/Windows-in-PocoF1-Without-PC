@@ -11,21 +11,21 @@
 
 - [Switch To Android package](https://github.com/n00b69/woaberyllium/releases/download/Dualboot/beryllium-sta.zip)
 
-
+#
 ## Dualboot guide
 This guide assumes you are rooted, if you aren't, please follow [this guide](root.md) first.
 
+#
 ### Setup - Windows
 - Navigate to C:\sta and create a shortcut of `sta.exe` to your desktop.
 
 #### Booting to Android
   - Run the new shortcut on your desktop (you can also pin it to your start menu / taskbar for ease of access)
   > [!Note]
-> ◆ if it prompt vcruntime140.dll error install [Microsoft Visual C++](https://aka.ms/vs/17/release/vc_redist.arm64.exe).
-> 
-> ◆if the above step failed, press restart in Windows, then as it is restarting boot back to recovery to flash your Android boot.img located in your internal storage /backup folder, and try again.
+> - if it prompt vcruntime140.dll error install [Microsoft Visual C++](https://aka.ms/vs/17/release/vc_redist.arm64.exe).
+> - if the above step failed, press restart in Windows, then as it is restarting boot back to recovery to flash your Android boot.img located in your internal storage /backup folder, and try again.
 
-
+#
 ### Setup - Android
 - Reboot to recovery, restore boot.img from 'sdcard/backup' folder, and reboot to system. 
 - Download and install the [WOA Helper app](https://github.com/n00b69/woaberyllium/releases/download/Dualboot/woahelper.apk), then open it and grant it root access.
