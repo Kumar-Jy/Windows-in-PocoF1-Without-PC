@@ -1,10 +1,9 @@
-<img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
-
 # _Windows Installation Guide for PocoF1 [Without PC]_
+
+<img align="right" src="beryllium.png" width="400" alt="Windows installation on beryllium">
+
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
-[![download](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/assets/20044626/3abc8b52-c5c6-4495-b623-d1312195d639)](https://youtu.be/e0fF1_bKQYE)
-#
 ## ⚠️ ${\color{red}Warning}$
 - _We're not responsible for any damage. Do it on your own risk._
 - _This project is in an early stage, follow all the steps carefully._
