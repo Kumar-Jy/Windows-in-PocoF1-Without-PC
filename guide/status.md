@@ -14,7 +14,7 @@ The project is in development. Expect some updates in the future.
 - [x] Brightness 
 - [ ] Camera
 - [x] Cellular
-- [x] Charging ```slow use QC3.0 or PD```
+- [x] Charging ```slow, use QC3.0 or PD```
 - [x] Display
 - [x] GPU  ```No x64 acceleration```
 - [ ] SD card ```Very unreliable```
