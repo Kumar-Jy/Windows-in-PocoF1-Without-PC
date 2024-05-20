@@ -9,7 +9,7 @@
 #
 ### Prerequisites
 - _A Working Brain (most important of all)_
-- [_Moded Ofox Recovery_](https://drive.google.com/file/d/18TtK7bqHF24mQ8xXlSeBlJUeAjzFuTOV/view?usp=drive_link)
+- [_Moded Ofox Recovery_](https://drive.google.com/file/d/17pzMXcdsOoPoZYChuqdDRYWatbnHpuqX/view?usp=drive_link)
 - [_Win Installer zip_](https://drive.google.com/file/d/11oHC2bIGH9OqEbh1CbLmEYfpWir3u8Bx/view?usp=drive_link)
 #
 ### ${\color{red}[WARNING]}$
@@ -22,7 +22,7 @@
 #
 
 ### **${\color{darkorange}1st\space Step - Partitioning}$**
-- Flash [Moded Ofox Recovery](https://drive.google.com/file/d/18TtK7bqHF24mQ8xXlSeBlJUeAjzFuTOV/view?usp=drive_link) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
+- Flash [Moded Ofox Recovery](https://drive.google.com/file/d/17pzMXcdsOoPoZYChuqdDRYWatbnHpuqX/view?usp=drive_link) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
 - Type ``` partition $ ``` on recovery terminal _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40`] (do not add GB at the end.)_
 - If it asks you to run it once again, do so
 - Reboot to check if Android still works. If it doesn't boot, format userdata and Reboot.
