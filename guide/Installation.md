@@ -18,7 +18,7 @@
 > - _Do not flash/run the same file/command twice unless specified._
 > - _Follow step by step guide, don't jump or skip any step._
 > - _YOU CAN BREAK YOUR DEVICE WITH THE COMMANDS/FILE BELOW IF YOU DO THEM WRONG!!!_
-> - _DO NOT REBOOT YOUR PHONE! If you think you made a mistake, ask for help in the [Telegram chat](https://t.me/WinOnF1)._
+> - _DO NOT REBOOT YOUR PHONE! If you think you made a mistake, ask for help in the [Telegram chat](https://t.me/Kumar_Jy)._
 #
 
 ### **${\color{darkorange}1st\space Step - Partitioning}$**
