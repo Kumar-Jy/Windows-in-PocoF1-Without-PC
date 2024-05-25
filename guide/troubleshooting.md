@@ -34,6 +34,17 @@ This usually means that winlogon.exe has failed, and you may need to reinstall W
 ### The computer restarted unexpectedly or encountered an unexpected error
 If you stumble upon this error, you may need to reinstall Windows. Use the [Installation guide](Installation.md)
 #
+### BlueScreen with DRIVER PNP WATCHDOG error
+(may be Bcz of touch panel deduction issue)
+- Restore android boot.img and reboot to android.
+- Download [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share), chech your touch panel type.
+- Download firstboot uefi img accordingly from this [link]()
+- Reboot to recovery and Flash wininstaller zip
+- Press volumes up button when rebooting to enter in recovery again
+- Flash firstboot uefi img on boot partition
+- Reboot to system and don't touch your phone till then windows setup logo appeared
+(Several restart is normal)
+#
 ### INACCESSIBLE_BOOT_DEVICE BSOD
 This Blue Screen of Death likely means some broken driver installation. To fix this, reinstall windows using the [Installation guide](Installation.md).
 #
