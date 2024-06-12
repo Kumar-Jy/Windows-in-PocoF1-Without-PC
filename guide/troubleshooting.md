@@ -35,14 +35,14 @@ This usually means that winlogon.exe has failed, and you may need to reinstall W
 If you stumble upon this error, you may need to reinstall Windows. Use the [Installation guide](Installation.md)
 #
 ### BlueScreen with DRIVER PNP WATCHDOG error
-(may be Bcz of touch panel deduction issue)
+(may be Bcz of touch panel detection issue)
 - Restore android boot.img and reboot to android.
 - Download [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share), chech your touch panel type.
-- Download firstboot uefi img accordingly from this [link]()
+- Download firstboot uefi img accordingly from this [link](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image)
 - Reboot to recovery and Flash wininstaller zip
 - Press volumes up button when rebooting to enter in recovery again
 - Flash firstboot uefi img on boot partition
-- Reboot to system and don't touch your phone till then windows setup logo appeared
+- Reboot to system and don't touch your phone till windows setup logo appeared
 (Several restart is normal)
 #
 ### INACCESSIBLE_BOOT_DEVICE BSOD
