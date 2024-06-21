@@ -37,7 +37,7 @@ If you stumble upon this error, you may need to reinstall Windows. Use the [Inst
 ### BlueScreen with DRIVER PNP WATCHDOG error
 (may be Bcz of touch panel detection issue)
 - Restore android boot.img and reboot to android.
-- Download [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share), chech your touch panel type.
+- Download [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share), check your touch panel type.
 - Download firstboot uefi img accordingly from this [link](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image)
 - Reboot to recovery and Flash wininstaller zip
 - Press volumes up button when rebooting to enter in recovery again
