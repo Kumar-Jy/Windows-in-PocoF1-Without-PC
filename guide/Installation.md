@@ -37,6 +37,7 @@
 - That's all , 
  You don't need to touch you phone just sit back and watch all installation process start automatically and phone will reboot to windows setup.
 - #### ${\color{red}Note}$ :- 
+> - Must remove any attached usb device or charger before flashing or it will not install properly.
 > - For Sound and Rotation flash New [UEFI](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image) after windows setup.
 > - Restore modem backup if cellular data not working.
 > - Wininstallar automatically creates backup of boot, efs and modem so if you forgot to take backup just copy `backup` folder from phone storage or from `cache` folder to MemoryCard/PenDrive.
