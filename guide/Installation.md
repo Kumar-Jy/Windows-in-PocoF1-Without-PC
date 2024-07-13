@@ -52,8 +52,9 @@
 #### _Switch to Windows_
 - Download and install the [WOA Helper app](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA), open it and grant root access.
 - Download the new [UEFI](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image) image for your panel and place it inside the folder named `UEFI` in your internal storage.
-- Return to the WOA Helper app and press the `Quickboot` button.
-#### ${\color{red}Note}$ :- if above steps failed follow [this](https://github.com/n00b69/woa-beryllium/blob/main/guide/dualboot.md) guide
+- Return to the WOA Helper app, open `WOA TOOLBOX` - click on `FLASH UEFI` , Now restart your phone and it will boot in windows.
+#### ${\color{red}Note}$ :- 
+-   Do Not use `QUICKBOOT TO WINDOWS` option it may wipe your SIM2 modem.
 #
 # _[Troubleshooting](troubleshooting.md)_
 
