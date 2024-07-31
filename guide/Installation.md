@@ -10,7 +10,7 @@
 ### Prerequisites
 - _A Working Brain (most important of all)_
 - [_Moded Ofox Recovery_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery)
-- [_Win Installer zip_](https://drive.google.com/file/d/1iR3xtkcpvfsIhYxnE9eAFJjtOuCZiU82/view?usp=drivesdk)
+- [_Win Installer zip_](https://drive.google.com/file/d/1Yo9Nh2V6xeq8SIx0RwlluYoMvR0ZyiKl/view?usp=drivesdk)
 #
 ### ${\color{red}[WARNING]}$
 > - _All your data will be erased ! Back up now if needed._
@@ -33,7 +33,7 @@
 #
 
 ### ${\color{darkorange}2nd\space Step - Installation}$
-- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1iR3xtkcpvfsIhYxnE9eAFJjtOuCZiU82/view?usp=drivesdk) (_at least 6GB free space in phone memory required for flashing_)
+- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1Yo9Nh2V6xeq8SIx0RwlluYoMvR0ZyiKl/view?usp=drivesdk) (_at least 6GB free space in phone memory required for flashing_)
 - That's all , 
  You don't need to touch you phone just sit back and watch all installation process start automatically and phone will reboot to windows setup.
 - #### ${\color{red}Note}$ :- 
