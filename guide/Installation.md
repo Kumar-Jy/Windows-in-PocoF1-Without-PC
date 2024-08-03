@@ -10,7 +10,7 @@
 ### Prerequisites
 - _A Working Brain (most important of all)_
 - [_Moded Ofox Recovery_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery)
-- [_Win Installer zip_](https://drive.google.com/file/d/1XPPEwVs_v8jj-mA4tpM0rkHjqCQUEdhe/view?usp=sharing)
+- [_Win Installer zip_](https://drive.google.com/file/d/1em2SfLIkgnwPX4nbaC0x1tZchvM3mDGy/view?usp=drivesdk)
 #
 ### ${\color{red}[WARNING]}$
 > - _All your data will be erased ! Back up now if needed._
@@ -19,7 +19,7 @@
 > - _Do not flash/run the same file/command twice unless specified._
 > - _Follow step by step guide, don't jump or skip any step._
 > - _YOU CAN BREAK YOUR DEVICE WITH THE COMMANDS/FILE BELOW IF YOU DO THEM WRONG!!!_
-> - _DO NOT REBOOT YOUR PHONE! If you think you made a mistake, ask for help in the [Telegram chat](https://t.me/Kumar_Jy)._
+> - _DO NOT REBOOT YOUR PHONE! If you think you made a mistake, ask for help in the [Telegram chat](https://t.me/WinInstaller)._
 #
 
 ### **${\color{darkorange}1st\space Step - Partitioning}$**
@@ -33,7 +33,7 @@
 #
 
 ### ${\color{darkorange}2nd\space Step - Installation}$
-- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1XPPEwVs_v8jj-mA4tpM0rkHjqCQUEdhe/view?usp=sharing) (_at least 6GB free space in phone memory required for flashing_)
+- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1em2SfLIkgnwPX4nbaC0x1tZchvM3mDGy/view?usp=drivesdk) (_at least 6GB free space in phone memory required for flashing_)
 - That's all , 
  You don't need to touch you phone just sit back and watch all installation process start automatically and phone will reboot to windows setup.
 - #### ${\color{red}Note}$ :- 
