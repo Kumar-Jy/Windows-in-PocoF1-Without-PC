@@ -17,7 +17,7 @@ The project is in development. Expect some updates in the future.
 - [x] Charging ```slow, use QC3.0 or PD```
 - [x] Display
 - [x] GPU  ```No x64 acceleration```
-- [x] SD card ```unreliable```
+- [x] SD card ```must be inserted before boot```
 - [x] Touchscreen 
 - [x] UFS
 - [x] USB
