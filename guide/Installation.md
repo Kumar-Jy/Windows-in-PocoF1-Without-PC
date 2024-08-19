@@ -47,8 +47,7 @@
 #
 ### ${\color{darkorange}Last\space step\space -Dual\space Boot\ Setup}$
 #### _Switch to Android_
-- Navigate to `` C:\sta `` and Install ` VC.exe `
-- create a shortcut of `sta.exe` to your desktop and Run it (you can also pin it to your start menu / taskbar for ease of access)
+- Run `Android` Icon from desktop to boot into Android (you can also pin it to your start menu / taskbar for ease of access)
 #### _Switch to Windows_
 - Download and install the [WOA Helper app](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA), open it and grant root access.
 - Download the new [UEFI](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image) image for your panel and place it inside the folder named `UEFI` in your internal storage.
