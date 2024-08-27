@@ -9,8 +9,10 @@
 #
 ### Prerequisites
 - _A Working Brain (most important of all)_
-- [_Moded Ofox Recovery_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery)
-- [_Win Installer zip_](https://drive.google.com/file/d/1GbdBXOQ9tbsSnhut8SQ5GZgbNEqAKqBO/view?usp=drive_link)
+
+- _Unlocked bootloader_ 
+
+- _Installed Custom Recovery_
 #
 ### ${\color{red}[WARNING]}$
 > - _All your data will be erased ! Back up now if needed._
