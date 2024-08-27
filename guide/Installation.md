@@ -45,12 +45,10 @@
 #
 ### ${\color{darkorange}Last\space step\space -Dual\space Boot\ Setup}$
 #### _Switch to Android_
-- Run `Android` Icon from desktop to boot into Android (you can also pin it to your start menu / taskbar for ease of access)
+- Run `Android` Icon from windows desktop to boot into Android.
 #### _Switch to Windows_
 - Download and install the [WOA Helper app](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA), open it and grant root access.
-- Now open `WOA TOOLBOX` - click on `FLASH UEFI` , and restart your phone, it will boot in windows.
-#### ${\color{red}Note}$ :- 
--   Do Not use `QUICKBOOT TO WINDOWS` option it may wipe your modem.
+- Now press ``QUICKBOOT TO WINDOWS``, and it will boot in windows.
 #
 # _[Troubleshooting](troubleshooting.md)_
 
