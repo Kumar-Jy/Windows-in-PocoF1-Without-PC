@@ -10,7 +10,7 @@
 ### Prerequisites
 - _A Working Brain (most important of all)_
 - [_Moded Ofox Recovery_](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery)
-- [_Win Installer zip_](https://drive.google.com/file/d/1au817_wFUw3voVaavxcmMFMvJycxdVYJ/view?usp=drivesdk)
+- [_Win Installer zip_](https://drive.google.com/file/d/1GbdBXOQ9tbsSnhut8SQ5GZgbNEqAKqBO/view?usp=drive_link)
 #
 ### ${\color{red}[WARNING]}$
 > - _All your data will be erased ! Back up now if needed._
@@ -33,15 +33,11 @@
 #
 
 ### ${\color{darkorange}2nd\space Step - Installation}$
-- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1au817_wFUw3voVaavxcmMFMvJycxdVYJ/view?usp=drivesdk) (_at least 6GB free space in phone memory required for flashing_)
+- Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1GbdBXOQ9tbsSnhut8SQ5GZgbNEqAKqBO/view?usp=drive_link) (_at least 6GB free space in phone memory required for flashing_)
 - That's all , 
  You don't need to touch you phone just sit back and watch all installation process start automatically and phone will reboot to windows setup.
 - #### ${\color{red}Note}$ :- 
 > - Must remove any attached usb device or charger before flashing or it will not install properly.
-> - For Sound and Rotation flash New [UEFI](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image) after windows setup.
-> - Restore modem backup if cellular data not working.
-> - Wininstallar automatically creates backup of boot, efs and modem so if you forgot to take backup just copy `backup` folder from phone storage or from `cache` folder to MemoryCard/PenDrive.
-> - If you have to re-flash WinInstaller, first restore modem and android boot.img then flash wininstaller.zip
 > - for any installation error visit _[troubleshooting](troubleshooting.md)_
 
 #
@@ -50,10 +46,9 @@
 - Run `Android` Icon from desktop to boot into Android (you can also pin it to your start menu / taskbar for ease of access)
 #### _Switch to Windows_
 - Download and install the [WOA Helper app](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA), open it and grant root access.
-- Download the new [UEFI](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image) image for your panel and place it inside the folder named `UEFI` in your internal storage.
-- Return to the WOA Helper app, open `WOA TOOLBOX` - click on `FLASH UEFI` , Now restart your phone and it will boot in windows.
+- Now open `WOA TOOLBOX` - click on `FLASH UEFI` , and restart your phone, it will boot in windows.
 #### ${\color{red}Note}$ :- 
--   Do Not use `QUICKBOOT TO WINDOWS` option it may wipe your SIM2 modem.
+-   Do Not use `QUICKBOOT TO WINDOWS` option it may wipe your modem.
 #
 # _[Troubleshooting](troubleshooting.md)_
 
