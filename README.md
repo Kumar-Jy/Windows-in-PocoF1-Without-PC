@@ -4,26 +4,26 @@
 
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
-## ⚠️ ${\color{red}Warning}$
+## ⚠️ Warning
 - _We're not responsible for any damage. Do it on your own risk._
 - _This project is in an early stage, follow all the steps carefully._
 
 #
-## ${\color{darkorange}Get\space started}$
+## Get Started
 - [_Installation Instructions_](guide/Installation.md)
 
 - [_Update Drivers_](guide/update.md)
   
 - [_Troubleshooting_](guide/troubleshooting.md)
 #
-## ${\color{darkorange}Miscellaneous}$
+## Miscellaneous
 - [_Project Status_](guide/status.md)
 
 - [_Additional Materials_](guide/materials.md)
 
 - [_Uninstall Instructions_](guide/uninstall.md)
 #
-## ${\color{darkorange}Contributors}$
+## Contributors
 [<img alt="adomerlee" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/109386069?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/adomerlee)
 [<img alt="Morc" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13377926?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/TheMorc)
 [<img alt="Icesito68" src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/113939920?v=4&w=45&fit=cover&mask=circle&maxage=7d" />](https://github.com/Icesito68)
