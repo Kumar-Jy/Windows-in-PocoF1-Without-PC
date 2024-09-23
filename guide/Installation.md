@@ -2,10 +2,10 @@
 <img align="right" src="beryllium.png" width="400" alt="Windows installation on beryllium">
 
 [![download](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/assets/20044626/3abc8b52-c5c6-4495-b623-d1312195d639)](https://youtu.be/e0fF1_bKQYE)
-## ${\color{blue}Steps\space for\space Installation}$ 
-- ${\color{darkorange}1st\space Step - Partitioning}$
-- ${\color{darkorange}2nd\space Step - Installation}$
-- ${\color{darkorange}3rd\space Step - Dual\space Boot}$
+## Steps for Installation
+- 1st Step - Partitioning
+- 2nd Step - Installation
+- 3rd Step - Dual Boot
 #
 ### Prerequisites
 - _A Working Brain (most important of all)_
@@ -14,7 +14,7 @@
 
 - _Installed Custom Recovery_
 #
-### ${\color{red}[WARNING]}$
+### [WARNING]
 > - _All your data will be erased ! Back up now if needed._
 > - _Backup Important Partition (Boot, EFS, Modem and Persist) and copy it to outside phone memory_
 > - _Your phone must be rooted, if it is not, follow [root](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/blob/main/guide/root.md) guide before start the process._
@@ -24,26 +24,26 @@
 > - _DO NOT REBOOT YOUR PHONE! If you think you made a mistake, ask for help in the [Telegram chat](https://t.me/WinInstaller)._
 #
 
-### **${\color{darkorange}1st\space Step - Partitioning}$**
+### 1st Step - Partitioning
 - Flash [Moded Ofox Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
 - Type ` partition $ ` on recovery terminal _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40`] (do not add GB at the end.)_
 - If it asks you to run it once again, do so
 - Reboot to check if Android still works. If it doesn't boot, format userdata and Reboot.
-- #### ${\color{red}Note}$ :- 
+- #### Notes :- 
 > - if your phone encrypted first unmount and format userdata then type above command to creat partition.
 > - If you already modified or installed Windows, first type ` restore ` then type above command to create new partition. 
 #
 
-### ${\color{darkorange}2nd\space Step - Installation}$
+### 2nd Step - Installation
 - Reboot to recovery and flash [WinInstaller.zip](https://drive.google.com/file/d/1GbdBXOQ9tbsSnhut8SQ5GZgbNEqAKqBO/view?usp=drive_link) (_at least 6GB free space in phone memory required for flashing_)
 - That's all , 
  You don't need to touch you phone just sit back and watch all installation process start automatically and phone will reboot to windows setup.
-- #### ${\color{red}Note}$ :- 
+- #### Notes :- 
 > - Must remove any attached usb device or charger before flashing or it will not install properly.
 > - for any installation error visit _[troubleshooting](troubleshooting.md)_
 
 #
-### ${\color{darkorange}Last\space step\space -Dual\space Boot\ Setup}$
+### Last Step - Dual Boot Setup
 #### _Switch to Android_
 - Run `Android` Icon from windows desktop to boot into Android.
 #### _Switch to Windows_
