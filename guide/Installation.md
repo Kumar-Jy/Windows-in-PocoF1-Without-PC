@@ -1,5 +1,5 @@
 # PocoF1 Windows Installation [Without PC]
-<img align="right" src="beryllium.png" width="400" alt="Windows installation on beryllium">
+<img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
 
 [![download](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/assets/20044626/3abc8b52-c5c6-4495-b623-d1312195d639)]()
 ## Steps for Installation
