@@ -51,7 +51,7 @@
 #### _Switch to Android_
 - Run `Android` Icon from windows desktop to boot into Android.
 #### _Switch to Windows_
-- Open WOA Helper app (Installed it and grant root access, if not already installed) and press ``QUICKBOOT TO WINDOWS``, it will boot in windows.
+- Open WOA Helper app (Install it and grant root access, if not already installed) and press ``QUICKBOOT TO WINDOWS``, it will boot in windows.
  
 #### Notes :- 
 > - whenever you install new Android Rom, must creat backup of boot.img of newly installed android.
