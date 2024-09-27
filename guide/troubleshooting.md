@@ -48,9 +48,6 @@ If you stumble upon this error, you may need to reinstall Windows. Use the [Inst
 ### INACCESSIBLE_BOOT_DEVICE BSOD
 This Blue Screen of Death likely means some broken driver installation. To fix this, reinstall windows using the [Installation guide](Installation.md).
 #
-### My screen is dimmer than before
-A weird workaround for this... is to just press the power button to put the phone to sleep, and again to wake it. Just works for some reason.
-#
 ### Wifi and mobile data not working
 Restart windows. if still not working, restore modem and persist from recovery.
 #
