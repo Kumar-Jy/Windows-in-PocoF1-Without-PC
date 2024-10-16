@@ -25,7 +25,7 @@
 #
 
 ### 1st Step - Partitioning
-- Flash [Modded Ofox Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery) either through your existing recovery or extract recovery.img from zip and flash through fastboot.
+- Flash [Modified Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery).
 - Type ` partition $ ` on recovery terminal _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40`] (do not add GB at the end.)_
 - If it asks you to run it once again, do so
 - Reboot to check if Android still works. If it doesn't boot, format userdata and Reboot.
@@ -58,25 +58,3 @@
 > - for creating backup , open Woa Helper app, graant root access - First tap on ``MOUNT WINDOWS`` then tape on `` BACKUP BOOT IMAGE `` and select ``WINDOWS`` .
 #
 # _[Troubleshooting](troubleshooting.md)_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
