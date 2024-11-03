@@ -37,7 +37,7 @@
 #
 
 ### 2nd Step - Installation
-- Download windows esd image of your choice from [here](https://arkt-7.github.io/woawin/) (It must be in download folder of your phone memory)
+- Download [windows esd image](https://arkt-7.github.io/woawin/) (It must be in Download folder of your phone memory)
 - Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/PocoF1_WinInstaller)
 - Reboot to recovery and flash it (_at least 6GB free space in phone memory required for flashing_)
 - That's all , 
