@@ -43,8 +43,9 @@
 - That's all , 
  You don't need to touch you phone just sit back and watch, all installation process start automatically and phone will reboot to windows setup.
 - #### Notes :- 
-> - Must remove any attached usb device or charger before flashing, or it may be BSOD error.
-> - for any installation error visit _[troubleshooting](troubleshooting.md)_
+> - Must format windows partition by typing `format` command on recovery terminal, If you have to re-flash it by-any reasons or there is already windows installed.
+> - Remove any attached usb device or charger before flashing, else it may be BSOD error.
+> - Visit _[troubleshooting](troubleshooting.md)_ if any error.
 
 #
 ### Last Step - Dual Boot Setup
@@ -52,9 +53,23 @@
 - Run `Android` Icon from windows desktop to boot into Android.
 #### _Switch to Windows_
 - Open WOA Helper app (Install it and grant root access, if not already installed) and press ``QUICKBOOT TO WINDOWS``, it will boot in windows.
- 
-#### Notes :- 
-> - whenever you install new Android Rom, must creat backup of boot.img of newly installed android.
-> - for creating backup , open Woa Helper app, graant root access - First tap on ``MOUNT WINDOWS`` then tape on `` BACKUP BOOT IMAGE `` and select ``WINDOWS`` .
+
+# 
+### Miscellaneous:-
+#### _If change to new Android_ 
+- You can install any Android Rom but must copy android boot.img of newly installed android to the windows partition.
+- For creating backup of android boot.img on windows partition, first root it then boot to modded recovery - open terminal and type ``dd if=/dev/block/by-name/boot of=/win/boot.img`` .
+
+#### _If format userdata_
+- Download [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share), and check your touch panel type
+- Creat a folder in the phone storage and rename it to `UEF`  - Download [new-boot.img](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image) according to your touch panel and place it in `UEFI` folder.
+- Download and install the [WOA Helper app](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA), open it and grant root access.
+- Now you can boot to windows by pressing ``QUICKBOOT TO WINDOWS`` .
+
+#### _Windows re-installation_
+- Download WinInstaller.zip and Windows ESD file.
+- Boot to modded recovery as per your rom.
+- open recovery terminal, type `format` and press enter (it will format previously installed windows)
+- Now flash Wininstaller.zip
 #
 # _[Troubleshooting](troubleshooting.md)_
