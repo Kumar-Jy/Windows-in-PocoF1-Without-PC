@@ -37,9 +37,10 @@
 #
 
 ### 2nd Step - Installation
-- Download [windows esd image](https://arkt-7.github.io/woawin/) (It must be in Download folder of your phone memory)
+- Download [windows esd image](https://arkt-7.github.io/woawin/)
 - Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/PocoF1_WinInstaller)
-- Reboot to recovery and flash it (_at least 6GB free space in phone memory required for flashing_)
+- The ESD file must be in the Download folder of the phone's memory, or if you need to flash it through a MEMORY_CARD or PENDRIVE, create a folder named `WOA` and copy ESD and WinInstaller.zip into it."
+- Reboot to recovery and flash wininstaller.zip
 - That's all , 
  You don't need to touch you phone just sit back and watch, all installation process start automatically and phone will reboot to windows setup.
 - #### Notes :- 
@@ -52,7 +53,7 @@
 #### _Switch to Android_
 - Run `Android` Icon from windows desktop to boot into Android.
 #### _Switch to Windows_
-- Open WOA Helper app (Install it and grant root access, if not already installed) and press ``QUICKBOOT TO WINDOWS``, it will boot in windows.
+- Open WOA Helper app (Install it from Download folder and grant root access, if not already installed) and press ``QUICKBOOT TO WINDOWS``, it will boot in windows.
 
 # 
 ### Miscellaneous:-
@@ -68,8 +69,8 @@
 
 #### _Windows re-installation_
 - Download WinInstaller.zip and Windows ESD file.
-- Boot to modded recovery as per your rom.
+- Boot to modded recovery.
 - open recovery terminal, type `format` and press enter (it will format previously installed windows)
-- Now flash Wininstaller.zip
+- Now reboot to recovery again and flash Wininstaller.zip
 #
 # _[Troubleshooting](troubleshooting.md)_
