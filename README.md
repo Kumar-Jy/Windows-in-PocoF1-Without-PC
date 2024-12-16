@@ -53,7 +53,6 @@ src="https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/14238
 
 ------
 ## Support My Work
-
 #### If you find my projects helpful, consider supporting my work! Your contributions will help me keep developing and sharing useful resources.
 
 <p align="left">
