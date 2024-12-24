@@ -9,20 +9,15 @@ If you want to uninstall windows use this instead of deleting partitions manuall
 
 If you want to relock your bootloader you'll need your partition table to be stock.
 
-### Prerequisites
-- [Restore.zip](https://drive.google.com/file/d/1u8TOgzLl93_TPm3LvdNVQz2m0MO-JW67/view?usp=drive_link)
-
 
 ### Uninstall instructions
 > [!Important]
 > This will delete all your Android data.
 #### [Method - 1]
-- Flash [Moded Ofox Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Moded-Ofox-Recovery) , open terminal and type `restore` , Format userdata and reboot to android.
-#### [Method - 2]
-- Boot to recovery and flash [Restore.zip](https://drive.google.com/file/d/1u8TOgzLl93_TPm3LvdNVQz2m0MO-JW67/view?usp=drive_link)
-- Reboot to recovery again and select Wipe > Format Data > Type `yes`
-- Reboot your system
-#### [Method -3]
+- Flash [Moded Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery) , goto mount and remove tick from all then open terminal and type `restore` , and reboot to system.
+- If it stuck on boot logo or reboot to fastboot just boot back to modded recovery - goto WIPE - select Format Data and type `yes` then reboot to system.
+
+#### [Method -2]
 - follow [this](https://github.com/n00b69/woa-beryllium/blob/main/guide/uninstall.md) guide  
 ## Finished!
 
