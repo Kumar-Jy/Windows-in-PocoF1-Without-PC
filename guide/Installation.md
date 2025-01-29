@@ -64,7 +64,7 @@
 #### _If format userdata_
 - Download [Device Info HW app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&pcampaignid=web_share), and check your touch panel type
 - Creat a folder in the phone storage and rename it to `UEF`  - Download [new-boot.img](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/UEFI-Boot-Image) according to your touch panel and place it in `UEFI` folder.
-- Download and install the [WOA Helper app](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA), open it and grant root access.
+- Download and install the [WOA Helper app](https://github.com/n00b69/woa-helper/releases), open it and grant root access.
 - Now you can boot to windows by pressing ``QUICKBOOT TO WINDOWS`` .
 
 #### _Windows re-installation_
