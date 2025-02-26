@@ -37,7 +37,7 @@
 #
 
 ### 2nd Step - Installation
-- Download [windows esd image](https://arkt-7.github.io/woawin/)
+- Download [windows esd image](https://arkt-7.github.io/woawin/) [Do not use 24H2]
 - Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/PocoF1_WinInstaller)
 - The ESD file must be in the Download folder of the phone's memory, or if you need to flash it through a MEMORY_CARD or PENDRIVE, create a folder named `WOA` and copy ESD and WinInstaller.zip into it."
 - Reboot to recovery and flash wininstaller.zip
