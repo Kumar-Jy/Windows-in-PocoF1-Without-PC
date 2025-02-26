@@ -13,6 +13,8 @@
 - [_Installation Instructions_](guide/Installation.md)
 
 - [_Update Drivers_](guide/update.md)
+
+- [_Re-Installation_](guide/reinstall.md)
   
 - [_Troubleshooting_](guide/troubleshooting.md)
 #
