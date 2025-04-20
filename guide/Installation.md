@@ -1,50 +1,47 @@
 # PocoF1 Windows Installation [Without PC]
-<img align="right" src="beryllium.png" width="350" alt="Windows installation on beryllium">
+<img align="right" src="beryllium.png" width="300" alt="Windows installation on beryllium">
 
 [![download](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/assets/20044626/3abc8b52-c5c6-4495-b623-d1312195d639)]()
-## Steps for Installation
-- 1st Step - Partitioning
-- 2nd Step - Installation
-- 3rd Step - Dual Boot
 #
-### Prerequisites
-- _A Working Brain (most important of all)_
-
-- _Unlocked bootloader_ 
-
-- _Rooted and Installed Custom Recovery_
+## Prerequisites
+- Unlocked bootloader
+- Other Android Devices/Computer - ```for booting into modded recovery```
+- USB otg cable - ``` for connecting your Android phone/Computer with your Poco F1```
 #
 ### [WARNING]
 > - _All your data will be erased ! Back up now if needed._
-> - _Backup Important Partition (Boot, EFS, Modem and Persist) and copy it to outside phone memory_
-> - _Your phone must be rooted, if it is not, follow [root](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/blob/main/guide/root.md) guide before start the process._
+> - _Backup Boot, EFS, Modem and Persist and copy it to outside phone memory_
 > - _Do not flash/run the same file/command twice unless specified._
 > - _Follow step by step guide, don't jump or skip any step._
 > - _YOU CAN BREAK YOUR DEVICE WITH THE COMMANDS/FILE BELOW IF YOU DO THEM WRONG!!!_
-> - _DO NOT REBOOT YOUR PHONE! If you think you made a mistake, ask for help in the [Telegram chat](https://t.me/WinInstaller)._
+> - _IF ANY ERROR, DO NOT REBOOT YOUR PHONE! just ask for help in the [Telegram chat](https://t.me/WinInstaller)._
 #
 
 ### 1st Step - Partitioning
-- Flash [Modified Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery).
+#### Perquisites :-
+- *[Moddified-twrp/Ofox-Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery)* 
+- *[Magisk Manager](https://github.com/topjohnwu/Magisk/releases/tag/v28.1)*
+
+- Flash modified Recovery through fastboot [```fastboot flash modded-recovery.img```] or through your already installed custom recovery.
+- Boot into modded recovery and install Magisk.zip - `If not already rooted` 
 - Goto mount section and unmount all partition.
-- Open recovery terminal and type ` partition $ ` _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40`] (do not add GB at the end.)_
-- If it asks you to run it once again, do so
-- Reboot to check if Android still works. If it doesn't boot, format userdata and Reboot.
-- Root it (if not already rooted), Install Magisk/KernalSU
-- #### Notes :- 
-> - if your phone encrypted first unmount and format userdata then type above command to create partition.
-> - If you already modified or installed Windows, first type ` restore ` then type above command to create new partition. 
+- Open recovery terminal [```Advance - Terminal```] and type ` partition $ ` _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40`] (do not add GB at the end.)_ . If it asks you to "run it once again", do so
+- Reboot recovery and format userdata [``wipe-format-type`` **yes**] and Reboot to system.
+- Setup Android and Install Magisk/KernalSU.apk
 #
 
 ### 2nd Step - Installation
-- Download [windows esd image](https://arkt-7.github.io/woawin/) [Do not use 24H2]
+#### Perquisites :-
+- [windows esd image](https://arkt-7.github.io/woawin/) [Do not use 24H2] 
 - Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/PocoF1_WinInstaller)
+
 - The ESD file must be in the Download folder of the phone's memory, or if you need to flash it through a MEMORY_CARD or PENDRIVE, create a folder named `WOA` and copy ESD and WinInstaller.zip into it."
 - Reboot to recovery and flash wininstaller.zip
 - That's all , 
  You don't need to touch you phone just sit back and watch, all installation process start automatically and phone will reboot to windows setup.
+
 - #### Notes :- 
-> - Must format windows partition by typing `format` command on recovery terminal, If you have to re-flash it by-any reasons or there is already windows installed.
+> - If you have to re-flash/re-install it by-any reasons, type `format` recovery terminal then only you can install/flash,
 > - Remove any attached usb device or charger before flashing, else it may be BSOD error.
 > - Visit _[troubleshooting](troubleshooting.md)_ if any error.
 
@@ -53,7 +50,7 @@
 #### _Switch to Android_
 - Run `Android` Icon from windows desktop to boot into Android.
 #### _Switch to Windows_
-- Open WOA Helper app (Install it from Download folder and grant root access, and press ``QUICKBOOT TO WINDOWS``, it will boot in windows.
+- Install Woa-Helper.apk from Download folder or download it from [here](https://github.com/n00b69/woa-helper/releases)], allow root permission, and press ``QUICKBOOT TO WINDOWS``.
 
 # 
 ### Miscellaneous:-
