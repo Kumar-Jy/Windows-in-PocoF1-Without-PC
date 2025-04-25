@@ -19,7 +19,8 @@
 
 ### 1st Step - Partitioning
 #### Perquisites :-
-- *[Moddified-twrp/Ofox-Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery)* 
+- Although it also supports stock MIUI but it would be better if you install a custom Android 13 to 15 ROM and use Ofox recovery.
+- *[Moddified-twrp/Ofox-Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery)*
 - *[Magisk Manager](https://github.com/topjohnwu/Magisk/releases/tag/v28.1)*
 
 - Flash modified Recovery through fastboot [```fastboot flash modded-recovery.img```] or through your already installed custom recovery.
