@@ -4,6 +4,9 @@
 
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
 
+[![Downloads](https://img.shields.io/github/downloads/Kumar-Jy/Windows-in-PocoF1-Without-PC/total?style=for-the-badge)](https://img.shields.io/github/downloads/Kumar-Jy/Windows-in-PocoF1-Without-PC/total?style=for-the-badge)
+
+
 ## ⚠️ Warning
 - _We're not responsible for any damage. Do it on your own risk._
 - _This project is in an early stage, follow all the steps carefully._
