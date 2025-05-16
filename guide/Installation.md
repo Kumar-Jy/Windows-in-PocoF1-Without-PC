@@ -20,11 +20,10 @@
 ### 1st Step - Partitioning
 #### Perquisites :-
 - Although it also supports stock MIUI but it would be better if you install a custom Android 13 to 15 ROM and use Ofox recovery.
-- *[Moddified-twrp/Ofox-Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery)*
-- *[Magisk Manager](https://github.com/topjohnwu/Magisk/releases/tag/v28.1)*
+- *[Moddified-twrp/Ofox-Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery)* - Download in Other Android Phone/PC
+- *[Magisk Manager](https://github.com/topjohnwu/Magisk/releases/tag/v29.0)* - Download into PocoF1
 
-- Flash modified Recovery through fastboot [```fastboot flash modded-recovery.img```] or through your already installed custom recovery.
-- Boot into modded recovery and install Magisk.zip - `If not already rooted` 
+- Boot into modded recovery using bugjager app or PC [``` fastboot boot modded-recovery.img```] and install Magisk.zip - `If not already rooted` 
 - Goto mount section and unmount all partition.
 - Open recovery terminal [```Advance - Terminal```] and type ` partition $ ` _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40`] (do not add GB at the end.)_ . If it asks you to "run it once again", do so
 - Reboot recovery and format userdata [``wipe-format-type`` **yes**] and Reboot to system.
@@ -37,7 +36,7 @@
 - Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/PocoF1_WinInstaller)
 
 - The ESD file must be in the Download folder of the phone's memory, or if you need to flash it through a MEMORY_CARD or PENDRIVE, create a folder named `WOA` and copy ESD and WinInstaller.zip into it."
-- Reboot to recovery and flash wininstaller.zip
+- Boot to Modded-recovery and flash wininstaller.zip [```Install - Select Wininstaller.zip and Swip to Flash```]
 - That's all , 
  You don't need to touch you phone just sit back and watch, all installation process start automatically and phone will reboot to windows setup.
 
