@@ -2,6 +2,8 @@
 <img align="right" src="beryllium.png" width="300" alt="Windows installation on beryllium">
 
 [![download](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/assets/20044626/3abc8b52-c5c6-4495-b623-d1312195d639)]()
+
+[![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/wininstaller)
 #
 ## Prerequisites
 - Unlocked bootloader
