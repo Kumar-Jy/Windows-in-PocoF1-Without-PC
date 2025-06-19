@@ -2,7 +2,7 @@
 
 <img align="right" src="beryllium.png" width="400" alt="Windows installation on beryllium">
 
-[![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/WinOnF1)
+[![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/wininstaller)
 
 [![Downloads](https://img.shields.io/github/downloads/Kumar-Jy/Windows-in-PocoF1-Without-PC/total?style=for-the-badge)](https://img.shields.io/github/downloads/Kumar-Jy/Windows-in-PocoF1-Without-PC/total?style=for-the-badge)
 
