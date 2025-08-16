@@ -19,6 +19,7 @@ jobs:
           BUILD_DATE=$(date '+%d-%b-%Y')
           echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
           echo "ARTIFACT_NAME=PocoF1-wininstaller-$BUILD_DATE" >> $GITHUB_ENV
+          echo "ZIP_NAME=PocoF1_WinInstaller_${BUILD_DATE}.zip" >> $GITHUB_ENV
 
       - name: Create temp and target directories
         run: |
@@ -34,15 +35,15 @@ jobs:
 
       - name: Setup ToolBox
         run: |
-          curl -L https://github.com/Misha803/My-Scripts/releases/download/WOA-ToolBox/WOA-Toolbox-NEW.exe \
-          -o temp/ToolBox/ToolBox.exe
           curl -L https://github.com/asheroto/Deploy-Office/releases/latest/download/Deploy-Office.exe \
           -o temp/ToolBox/Deploy-Office.exe
+          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/win_office_activator.bat \
+          -o temp/ToolBox/Win_Office_Activator.bat
           curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AME.Wizard.Beta.exe \
           -o temp/ToolBox/AME.Wizard.exe
           curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AtlasPlaybook_v0.4.1.apbx \
           -o temp/ToolBox/AtlasPlaybook_v0.4.1.apbx
-          7z a ToolBox.zip temp/ToolBox/*
+          7z a Toolbox.zip temp/ToolBox/*
 
       - name: Download Woa-Helper
         run: |
@@ -65,6 +66,19 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: |
             installer
-            ToolBox.zip
+            Toolbox.zip
             META-INF
             woahelper.apk
+  
+      - name: Create Final ZIP
+        run: |
+          7z a "${ZIP_NAME}" installer Toolbox.zip META-INF woahelper.apk sha256sum
+
+      - name: Upload release (GitHub Release)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: PocoF1_WinInstaller
+          name: "WinInstaller for PocoF1"
+          files: ${{ env.ZIP_NAME }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
