@@ -1,0 +1,70 @@
+name: Build Beryllium-Installer ZIP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install 7zip
+        run: sudo apt-get update && sudo apt-get install -y p7zip-full
+
+      - name: Set build date and artifact name
+        run: |
+          BUILD_DATE=$(date '+%d-%b-%Y')
+          echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
+          echo "ARTIFACT_NAME=PocoF1-wininstaller-$BUILD_DATE" >> $GITHUB_ENV
+
+      - name: Create temp and target directories
+        run: |
+          mkdir -p temp/ToolBox
+
+      - name: Setup installer directory
+        run: |
+          mkdir -p installer
+          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/pe.img \
+          -o installer/pe.img
+          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/UEFI-Boot-Image/Driver.zip \
+          -o installer/Driver.zip
+
+      - name: Setup ToolBox
+        run: |
+          curl -L https://github.com/Misha803/My-Scripts/releases/download/WOA-ToolBox/WOA-Toolbox-NEW.exe \
+          -o temp/ToolBox/ToolBox.exe
+          curl -L https://github.com/asheroto/Deploy-Office/releases/latest/download/Deploy-Office.exe \
+          -o temp/ToolBox/Deploy-Office.exe
+          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AME.Wizard.Beta.exe \
+          -o temp/ToolBox/AME.Wizard.exe
+          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AtlasPlaybook_v0.4.1.apbx \
+          -o temp/ToolBox/AtlasPlaybook_v0.4.1.apbx
+          7z a ToolBox.zip temp/ToolBox/*
+
+      - name: Download Woa-Helper
+        run: |
+          curl -L https://github.com/n00b69/woa-helper/releases/download/APK/BETAwoahelper1.8.4.41.apk \
+          -o woahelper.apk
+
+      - name: Generate and copy SHA-256 checksums
+        run: |
+          cd installer && find . -type f -print0 | xargs -0 sha256sum > ../temp/sha256sum
+          cp ../temp/sha256sum sha256sum
+
+      - name: Cleanup temp folders
+        continue-on-error: true
+        run: |
+          rm -rf temp
+
+      - name: Upload installer artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: |
+            installer
+            ToolBox.zip
+            META-INF
+            woahelper.apk
