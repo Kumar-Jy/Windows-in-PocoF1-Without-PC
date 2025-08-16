@@ -169,7 +169,7 @@ ui_print "*-----------------------------------------------*"
 ui_print "*         Extracting Installation File          *"
 rm -rf /tmp/win/installer/ /sdcard/UEFI && \
 mkdir -p /tmp/win/installer/Driver /sdcard/UEFI
-for file in Driver.zip install.bat pe.img sta.exe; do
+for file in Driver.zip install.bat pe.img sha256sum sta.exe; do
   package_extract_file "installer/$file" "/tmp/win/installer/$file" || error_exit "Error extracting $file"
 done
 ui_print "*-----------------------------------------------*"
