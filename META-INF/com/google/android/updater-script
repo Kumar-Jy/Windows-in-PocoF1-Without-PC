@@ -1,0 +1,215 @@
+#!/sbin/bash
+#
+# Copyright (C) 2023-25 https://github.com/Kumar-Jy
+#
+# Made for WINDOWS Installation on WOA Devices 
+#
+path="/dev/block/by-name"
+error_exit() { umount "$path/esp" "$path/win"; ui_print "$1"; exit 1; }
+if [ "$(getprop ro.product.device)" != "beryllium" ]; then 
+ui_print "This script is only for BERYLLIUM devices."
+ui_print "Your device is $(getprop ro.product.device)." 
+exit 1
+fi
+
+show_progress 1.34 225;
+ui_print "================================================*"
+ui_print "*   Welcome to Windows Installation on PocoF1   *"
+ui_print "*      Version: WinInstaller_Beryllium_3.2      *"
+ui_print "*      Date   : 15-Aug-2025                     *"
+ui_print "*      Script Written by: Kumar_Jy              *"
+ui_print "* Help and suggestions: ArKT, Sog, Andre_grams  *"
+ui_print "* Drivers/UEFI:TAOcroatia,temblor55,2Petro & idk*"
+ui_print "================================================*"
+ui_print "*           Verifying Partition Size            *"
+
+round() {
+    echo $(awk "BEGIN {print int($1 + 0.5)}")
+}
+
+if [ -e "$path/win" ] && [ -e "$path/esp" ]; then
+    WIN_SIZE_BYTES=$(blockdev --getsize64 "$path/win")
+    ESP_SIZE_BYTES=$(blockdev --getsize64 "$path/esp")
+    USERDATA_SIZE_BYTES=$(blockdev --getsize64 "$path/userdata")
+    
+    WIN_SIZE=$(awk "BEGIN {print $WIN_SIZE_BYTES / (1000 * 1000 * 1000)}")  # In GB
+    ESP_SIZE=$(awk "BEGIN {print $ESP_SIZE_BYTES / (1000 * 1000)}")  # In MB
+    USERDATA_SIZE=$(awk "BEGIN {print $USERDATA_SIZE_BYTES / (1000 * 1000 * 1000)}")  # In GB
+    
+    WIN_SIZE_ROUNDED=$(round "$WIN_SIZE")
+    ESP_SIZE_ROUNDED=$(round "$ESP_SIZE")
+    USERDATA_SIZE_ROUNDED=$(round "$USERDATA_SIZE")
+	
+    ui_print " USERDATA_SIZE: ${USERDATA_SIZE_ROUNDED}GB"
+    ui_print " WIN_SIZE: ${WIN_SIZE_ROUNDED}GB"
+    ui_print " ESP_SIZE: ${ESP_SIZE_ROUNDED}MB"
+
+    if [ "$WIN_SIZE_ROUNDED" -ge 26 ] && [ "$ESP_SIZE_ROUNDED" -ge 349 ]; then
+        ui_print "* Partition size meets requirements.       "
+    else
+        ui_print "*Partition size doesn't meet requirements. "
+		ui_print "At least 26GB for WIN partition and 350MB for ESP partition are required."
+        exit 1
+    fi
+else
+    ui_print "Required partitions (WIN and ESP) do not exist."
+    exit 1
+fi
+ui_print "*-----------------------------------------------*"
+ui_print "*            Checking Battery Status            *"
+battery_percentage=$(cat /sys/class/power_supply/battery/capacity)
+if [ "$battery_percentage" -le 50 ]; then
+    ui_print "Battery is below 50%, exiting..."
+    exit 1
+else
+    ui_print "Battery percentage is sufficient: $battery_percentage%"
+fi
+
+ui_print "*-----------------------------------------------*"
+ui_print "*                   Fixing GPT                  *"
+mkdir -p /tmp
+GDISK_BINARY="/tmp/gdisk"
+package_extract_file "META-INF/com/bin/gdisk" "$GDISK_BINARY" && chmod 0777 "$GDISK_BINARY"
+
+for dev in /dev/block/sd[a-f]; do
+    "$GDISK_BINARY" "$dev" <<< $'x\nj\n\nk\n\nw\nY\n'
+done
+
+ui_print "*-----------------------------------------------*"
+ui_print "*  Extracting boot and modem to /sdcard/backup  *"
+mkdir -p /tmp/backup
+for part in boot$(getprop ro.boot.slot_suffix) dtbo$(getprop ro.boot.slot_suffix) fsc fsg modemst1 modemst2 persist; do  
+    dd if=$path/$part of=/tmp/backup/$part.img
+done
+
+mkdir -p /{sdcard,external_sd/WOA,usbstorage/WOA,usb_otg/WOA}/backup
+for j in /sdcard /external_sd/WOA /usbstorage/WOA /usb_otg/WOA; do
+    cp -r -n /tmp/backup "$j"
+done
+
+ui_print "*-----------------------------------------------*"
+ui_print "*   Checking if Windows is already installed    *"
+ui_print "*-----------------------------------------------*"
+mkdir -p /tmp/win
+umount $path/win
+mount.ntfs "$path/win" /tmp/win || { ui_print "Failed to mount $path/win"; exit 1; }
+
+if [ -f /tmp/win/Windows/explorer.exe ]; then
+    ui_print "*          Windows is already installed         *"
+	touch /tmp/win/testfile 2>/dev/null && rm /tmp/win/testfile || { 
+		error_exit "Error: Partition is Read-Only, Goto Windows then reboot to Android and try again" >&2
+	}
+    ui_print "*         Skipping format and copy steps        *"
+    ui_print "*       and processing Drivers Installation     *"
+else
+    ui_print "*          Windows is not yet installed         *"
+    ui_print "*         Proceeding Windows Installation       *"
+    ui_print "*-----------------------------------------------*"
+    ui_print "*              Searching Windows Image          *"
+	WIN_IMAGE=""
+
+	find_image() {
+		[ -n "$WIN_IMAGE" ] && return
+		WIN_IMAGE=$(find "$1" -type f \( -name "*.esd" -o -name "*.wim" \) ! -path "*/Android/*" 2>/dev/null | head -n 1)
+		[ -n "$WIN_IMAGE" ] && ui_print " Found: $WIN_IMAGE"
+	}
+
+	for d in /sdcard/Download /external_sd/WOA /usbstorage/WOA /usb_otg/WOA /sdcard /external_sd /usbstorage /usb_otg; do
+		[ -d "$d" ] && find_image "$d"
+		[ -n "$WIN_IMAGE" ] && break
+	done
+
+	if [ -z "$WIN_IMAGE" ]; then
+		error_exit " No Windows image (.esd or .wim) found! "
+	fi
+
+    ui_print "*-----------------------------------------------*"
+    ui_print "*           Verifying Windows Edition           *"
+    mkdir -p /tmp
+    package_extract_file "META-INF/com/bin/wimlib" "/tmp/wimlib"
+    chmod 0777 /tmp/wimlib
+    /tmp/wimlib info "$WIN_IMAGE" > /tmp/wim_info.txt
+    
+	WINDOWS_EDITIONS=(
+        "Windows 11 Pro"
+        "Windows 11 IoT Enterprise LTSC"
+        "Windows 11 Enterprise LTSC"
+		"Windows 11 Enterprise"
+        "Windows 11 Home"
+		"Windows 10 Pro"
+		"Windows 10 Home"
+    )
+	
+    for EDITION in "${WINDOWS_EDITIONS[@]}"; do
+        INDEX=$(grep -B 1 "$EDITION" /tmp/wim_info.txt | awk '/Index/ {print $2; exit}')
+        if [[ -n "$INDEX" ]]; then
+            SELECTED_INDEX="$INDEX"
+            SELECTED_EDITION="$EDITION"
+            ui_print "* $SELECTED_EDITION found at Index No $SELECTED_INDEX *" 
+            break
+        fi
+    done
+	if [[ -z "$SELECTED_INDEX" ]]; then
+		error_exit "! No matching Windows edition found in $WIN_IMAGE !"
+	fi
+
+    ui_print "*-----------------------------------------------*"
+    ui_print " Installing $SELECTED_EDITION ....."
+    umount $path/win
+    mkfs.ntfs -f $path/win -L WINF1
+    /tmp/wimlib apply "$WIN_IMAGE" "$SELECTED_INDEX" "$path/win"
+fi
+
+mount.ntfs $path/win /tmp/win
+if [ ! -f /tmp/win/Windows/explorer.exe ]; then
+    error_exit "Failed to install $SELECTED_EDITION, ESD/WIM file may be corrupted, Reboot to Android and check the ESD/WIM image."
+fi
+
+ui_print "*-----------------------------------------------*"
+ui_print "*         Extracting Installation File          *"
+rm -rf /tmp/win/installer/ /sdcard/UEFI && \
+mkdir -p /tmp/win/installer/Driver /sdcard/UEFI
+for file in Driver.zip install.bat pe.img sta.exe; do
+  package_extract_file "installer/$file" "/tmp/win/installer/$file" || error_exit "Error extracting $file"
+done
+unzip /tmp/win/installer/Driver.zip -d /tmp/win/installer/Driver || error_exit "Error in unziping Driver.zip"
+ui_print "*-----------------------------------------------*"
+ui_print "*           Verifying Display type              *"
+panel=Unknown; touch=Unknown
+case "$(cat /proc/cmdline)" in *ebbg_fhd_ft8719*) panel=EBBG ;; *tianma_fhd_nt36672a*) panel=Tianma ;; esac
+for f in /sys/class/input/event*/device/name; do n=$(cat "$f"); case "$n" in *NVT*|*nvt*|*NVTCapacitive*) touch=Novatek ;; *fts*|*Fts*|*Focaltech*) touch=FocalTech ;; esac; done
+
+case "$panel/$touch" in
+  EBBG/FocalTech) img1=ebbg.img; img2=newebbg.img; msg="*EBBG boot image extracted successfully*" ;;
+  EBBG/Novatek)   img1=ebbg.img; img2=newebbg.img; msg="Hybrid panel detected — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
+  Tianma/Novatek) img1=tianma.img; img2=newtianma.img; msg="*Tianma boot image extracted successfully*" ;;
+  *) error_exit "* Unknown display/touch combo, UEFI flashing failed *" ;;
+esac
+
+package_extract_file "installer/$img1" /tmp/win/installer/uefi.img || error_exit "$img1 extraction failed"
+package_extract_file "installer/$img2" /sdcard/UEFI/"$img2" || error_exit "$img2 extraction failed"
+ui_print "$msg"
+
+package_extract_file "Toolbox.zip" "/tmp/win/Toolbox.zip" || error_exit "Error in extracting Toolbox.zip"
+package_extract_file "woahelper.apk" "/sdcard/woahelper.apk" || error_exit "Error in extracting woahelper.apk"
+
+ui_print "*-----------------------------------------------*"
+ui_print "*             Flashing UEFI Image               *"
+dd if=/sdcard/backup/boot.img of=/tmp/win/boot.img || error_exit "Error copying boot.img"
+dd if=/tmp/win/installer/pe.img of=$path/esp || error_exit "Error flashing pe.img"
+dd if=/tmp/win/installer/uefi.img of=$path/boot || error_exit "Error flashing uefi.img"
+umount $path/{esp,win}
+sleep 1
+ui_print "*===============================================*"
+ui_print "*              Flashing Completed               *"
+ui_print "*                                               *"
+ui_print "*        Now reboot to start Installation       *"
+ui_print "*                                               *"
+ui_print "*     Installation will start automatically     *"
+ui_print "*                                               *"
+ui_print "*      If it Fails, Don't Flash it again        *"
+ui_print "*                                               *"
+ui_print "*    ask for help on Telegram: @wininstaller    *"
+ui_print "*                                               *"
+ui_print "*===============================================*"
+exit

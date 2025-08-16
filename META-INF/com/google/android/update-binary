@@ -1,0 +1,173 @@
+#!/sbin/sh
+export UPD_ZIP="$3"
+export UPD_INTERFACE="/proc/$$/fd/$2"
+export RECOVERY_SCRIPT_FD=$2
+export UPD_TEMP_FOLDER=/tmp
+export ZIP_TEMP_FOLDER=/zip_tmp
+
+set -o pipefail
+
+
+# same as progress command in updater-script, for example:
+#
+# progress 0.25 10
+#
+# will update the next 25% of the progress bar over a period of 10 seconds
+
+progress() {
+	if [ $# != 2 ] 
+	then echo "$0 expects 2 args, got $#"; 
+		 echo "usage: $0 <fraction> <duration>";
+	else 
+		if [ $UPD_INTERFACE != "" ]; then
+		echo "progress ${1} ${2} " 1>&$UPD_INTERFACE;
+		fi;
+	fi
+}
+
+show_progress() {
+	progress $@
+}
+
+# same as set_progress command in updater-script, for example:
+#
+# set_progress 0.25
+#
+# sets progress bar to 25%
+
+set_progress() {
+	if [ $# != 1 ] 
+	then echo "$0 expects 1 args, got $#"; 
+		 echo "usage: $0 <fraction>";
+	else 
+		if [ $UPD_INTERFACE != "" ]; then
+		echo "set_progress ${1} " 1>&$UPD_INTERFACE;
+		fi;
+	fi
+}
+
+# same as ui_print command in updater_script, for example:
+#
+# ui_print "hello world!"
+#
+# will output "hello world!" to recovery, while
+#
+# ui_print
+#
+# outputs an empty line
+
+ui_print() {
+  if [ $UPD_INTERFACE != "" ]; then
+    echo "ui_print $* " 1>&$UPD_INTERFACE;
+    echo "ui_print " 1>&$UPD_INTERFACE;
+  else
+    echo "$*";
+  fi;
+}
+
+
+# FIXES AND FEATURES ADDED BY ArKT , telegram - ArKT_7, Github - https://github.com/ArKT-7
+# UI_PRINT FIX, 
+# ADDED - PROGRESS_BAR, PROGRESS_PERCENTANGE WHILE CP, 
+#
+
+OUTFD=/proc/self/fd/$2;
+
+ui_print() {
+  until [ ! "$1" ]; do
+    echo "ui_print $1
+      ui_print" >> $OUTFD;
+    shift;
+  done;
+}
+
+show_progress() { echo "progress $1 $2" >> $OUTFD; }
+
+copy_with_progress() {
+    local src_file=$1
+    local dest_file=$2
+    local total_size=$(stat -c%s "$src_file")
+    local copied_size=0
+    local percentage=0
+    cp "$src_file" "$dest_file" &
+    local cp_pid=$!
+    while kill -0 "$cp_pid" 2>/dev/null; do
+        copied_size=$(stat -c%s "$dest_file" 2>/dev/null || echo 0)
+        percentage=$(echo "scale=2; ($copied_size / $total_size) * 100" | bc)
+        local progress_message="$(basename "$src_file") - $percentage%"
+        ui_print "$progress_message"
+        sleep 1
+    done
+    ui_print "$(basename "$src_file") - 100%."
+}
+
+abort() {
+  ui_print "$@";
+  ui_print "*                      ***                      *";
+  exit 1;
+}
+#till here its by ArKt
+
+package_extract_file(){
+	if [ $# != 2 ] 
+	then echo "$0 expects 2 args, got $#"; 
+		 echo "usage: $0 <src-file> <dst-file>";
+	else unzip -p $UPD_ZIP $1 > $2;
+	fi
+}
+
+package_extract_folder(){
+	if [ -d $ZIP_TEMP_FOLDER ] 
+	then rm -rf $ZIP_TEMP_FOLDER
+	fi
+	
+	if [ $# != 2 ] 
+	then echo "$0 expects 2 args, got $#"; echo "usage: $0 <src-dir> <dst-dir>";
+	else mkdir -p ZIP_TEMP_FOLDER
+		 unzip $UPD_ZIP $1/* -d $ZIP_TEMP_FOLDER;
+		 mv $ZIP_TEMP_FOLDER/$1 $2
+	fi	
+}
+
+set_perm() {
+	if [ $# != 2 ] 
+	then echo "$0 expects 4 args, got $#"; 
+		 echo "usage: $0 <uid> <gid> <mode> <pathtofile>[, ... pathtofileN]";
+	else
+		us=$(id -u $1)
+		gr=$(id -g $2)
+		mode=$3
+		shift 3
+		for item in "$*"; do
+			chown ${us}.${gr} $item
+			chown ${us}:${gr} $item
+			chmod $mode $item
+		done
+	fi
+}
+
+stdout_to_ui_print() {
+	while read -r line; do
+	ui_print "$line"
+	done
+}
+
+to_ui_print() {
+	eval "$*" | stdout_to_ui_print
+}
+
+# empty line after "Extracting ..." from updater-script
+ui_print;
+if [ "$UPD_ZIP" == "/tmp/update.zip" ]; then
+	ui_print "Can not run in sideload mode"
+	abort;
+fi
+
+if [ -d $UPD_TEMP_FOLDER ]
+then rm -rf $UPD_TEMP_FOLDER
+fi
+mkdir -p $UPD_TEMP_FOLDER
+package_extract_file META-INF/com/google/android/updater-script $UPD_TEMP_FOLDER/updater-script || ui_print "Can not extract updater-script. Do you have it in package?"
+chmod 777 $UPD_TEMP_FOLDER/updater-script
+. $UPD_TEMP_FOLDER/updater-script $@
+exit $?
