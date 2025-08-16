@@ -3,6 +3,9 @@ name: Build Beryllium-Installer ZIP
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -77,7 +80,7 @@ jobs:
       - name: Upload release (GitHub Release)
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: PocoF1_WinInstaller
+          tag_name: "PocoF1_WinInstaller-${{ github.run_id }}"
           name: "WinInstaller for PocoF1"
           files: ${{ env.ZIP_NAME }}
         env:
