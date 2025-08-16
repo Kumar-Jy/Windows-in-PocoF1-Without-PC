@@ -19,9 +19,9 @@ jobs:
 
       - name: Set build date and artifact name
         run: |
-          BUILD_DATE=$(date '+%d-%b-%Y')
+          BUILD_DATE=$(date '+%d%m%y')
           echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
-          echo "ARTIFACT_NAME=PocoF1-wininstaller-$BUILD_DATE" >> $GITHUB_ENV
+          echo "ARTIFACT_NAME=PocoF1-wininstaller-TEST-$BUILD_DATE" >> $GITHUB_ENV
           echo "ZIP_NAME=PocoF1_WinInstaller_${BUILD_DATE}.zip" >> $GITHUB_ENV
 
       - name: Create temp and target directories
@@ -80,8 +80,9 @@ jobs:
       - name: Upload release (GitHub Release)
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "PocoF1_WinInstaller-${{ github.run_id }}"
-          name: "WinInstaller for PocoF1"
+          tag_name: PocoF1_WinInstaller
           files: ${{ env.ZIP_NAME }}
+          draft: false
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
