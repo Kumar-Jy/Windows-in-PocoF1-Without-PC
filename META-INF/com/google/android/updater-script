@@ -172,6 +172,11 @@ mkdir -p /tmp/win/installer/Driver /sdcard/UEFI
 for file in Driver.zip install.bat pe.img sta.exe; do
   package_extract_file "installer/$file" "/tmp/win/installer/$file" || error_exit "Error extracting $file"
 done
+ui_print "*-----------------------------------------------*"
+ui_print "*       Verifying Checksum for Installer        *"
+(cd /tmp/win/installer && sha256sum -c sha256sum) || { error_exit "Checksum verification failed, wininstaller is corrupted, download it again"; }
+ui_print "Checksum verification success"
+
 unzip /tmp/win/installer/Driver.zip -d /tmp/win/installer/Driver || error_exit "Error in unziping Driver.zip"
 ui_print "*-----------------------------------------------*"
 ui_print "*           Verifying Display type              *"
