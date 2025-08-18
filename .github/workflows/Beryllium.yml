@@ -46,7 +46,7 @@ jobs:
           -o temp/ToolBox/AME.Wizard.exe
           curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AtlasPlaybook_v0.4.1.apbx \
           -o temp/ToolBox/AtlasPlaybook_v0.4.1.apbx
-          7z a Toolbox.zip temp/ToolBox/*
+          cd temp/ToolBox && 7z a ../../Toolbox.zip *
 
       - name: Download Woa-Helper
         run: |
