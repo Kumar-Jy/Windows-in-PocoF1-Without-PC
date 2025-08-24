@@ -16,7 +16,7 @@ show_progress 1.34 225;
 ui_print "================================================*"
 ui_print "*   Welcome to Windows Installation on PocoF1   *"
 ui_print "*      Version: WinInstaller_Beryllium_3.2      *"
-ui_print "*      Date   : 15-Aug-2025                     *"
+ui_print "*      Date   : 24-Aug-2025                     *"
 ui_print "*      Script Written by: Kumar_Jy              *"
 ui_print "* Help and suggestions: ArKT, Sog, Andre_grams  *"
 ui_print "* Drivers/UEFI:TAOcroatia,temblor55,2Petro & idk*"
@@ -108,20 +108,36 @@ else
     ui_print "*              Searching Windows Image          *"
 	WIN_IMAGE=""
 
-	find_image() {
-		[ -n "$WIN_IMAGE" ] && return
-		WIN_IMAGE=$(find "$1" -type f \( -name "*.esd" -o -name "*.wim" \) ! -path "*/Android/*" 2>/dev/null | head -n 1)
-		[ -n "$WIN_IMAGE" ] && ui_print " Found: $WIN_IMAGE"
+	search_img() {
+	  WIN_IMAGE=$(find "$1" -type f \( -name "*.wim" -o -name "*.esd" \) ! -path "*/Android/*" 2>/dev/null | head -n 1)
+	  [ -n "$WIN_IMAGE" ] && ui_print " Found: $WIN_IMAGE"
 	}
 
+	extract_iso() {
+	  ISO=$(find "$1" -type f -name "*.iso" ! -path "*/Android/*" 2>/dev/null | head -n 1)
+	  [ -n "$ISO" ] || return
+	  ui_print " Found ISO: $ISO"
+	  DIR=$(dirname "$ISO")
+	  package_extract_file "META-INF/com/bin/7za" "/tmp/7za"
+	  chmod 0777 /tmp/7za
+	  /tmp/7za e "$ISO" "sources/install.*" -o"$DIR" -y >/dev/null 2>&1
+	  WIN_IMAGE=$(find "$DIR" -type f \( -name "install.wim" -o -name "install.esd" \) | head -n 1)
+	  [ -n "$WIN_IMAGE" ] && ui_print " Extracted: $WIN_IMAGE"
+	}
+	
 	for d in /sdcard/Download /external_sd/WOA /usbstorage/WOA /usb_otg/WOA /sdcard /external_sd /usbstorage /usb_otg; do
-		[ -d "$d" ] && find_image "$d"
-		[ -n "$WIN_IMAGE" ] && break
+	  [ -d "$d" ] || continue
+	  search_img "$d"
+	  [ -n "$WIN_IMAGE" ] && break
 	done
-
-	if [ -z "$WIN_IMAGE" ]; then
-		error_exit " No Windows image (.esd or .wim) found! "
-	fi
+	
+	[ -n "$WIN_IMAGE" ] || for d in /sdcard/Download /external_sd/WOA /usbstorage/WOA /usb_otg/WOA /sdcard /external_sd /usbstorage /usb_otg; do
+	  [ -d "$d" ] || continue
+	  extract_iso "$d"
+	  [ -n "$WIN_IMAGE" ] && break
+	done
+	
+	[ -n "$WIN_IMAGE" ] || error_exit " No Windows image (.wim/.esd or .iso with install.wim/esd) found!"
 
     ui_print "*-----------------------------------------------*"
     ui_print "*           Verifying Windows Edition           *"
