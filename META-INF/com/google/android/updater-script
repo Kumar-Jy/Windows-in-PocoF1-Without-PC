@@ -202,7 +202,7 @@ for f in /sys/class/input/event*/device/name; do n=$(cat "$f"); case "$n" in *NV
 
 case "$panel/$touch" in
   EBBG/FocalTech) img1=ebbg.img; img2=newebbg.img; msg="*EBBG boot image extracted successfully*" ;;
-  EBBG/Novatek)   img1=tianma.img; img2=newtianma.img; msg="Hybrid panel detected — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTech."{inf,cat,sys} ;;
+  EBBG/Novatek)   img1=tianma.img; img2=newtianma.img; msg="Hybrid panel detected — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTechTouch."{inf,cat,sys} ;;
   Tianma/FocalTech)   img1=ebbg.img; img2=newebbg.img; msg="Hybrid panel detected — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
   Tianma/Novatek) img1=tianma.img; img2=newtianma.img; msg="*Tianma boot image extracted successfully*" ;;
   *) error_exit "* Unknown display/touch combo, UEFI flashing failed *" ;;
