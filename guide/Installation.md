@@ -12,7 +12,7 @@
 #
 ### [WARNING]
 > - _All your data will be erased ! Back up now if needed._
-> - _Backup Boot, EFS, Modem and Persist and copy it to outside phone memory_
+> - _Backup Boot, EFS, Modem and Persist and save it to outside phone memory_
 > - _Do not flash/run the same file/command twice unless specified._
 > - _Follow step by step guide, don't jump or skip any step._
 > - _YOU CAN BREAK YOUR DEVICE WITH THE COMMANDS/FILE BELOW IF YOU DO THEM WRONG!!!_
@@ -21,14 +21,14 @@
 
 ### 1st Step - Partitioning
 #### Perquisites :-
-- Although it also supports stock MIUI but it would be better if you install a custom Android 13 to 15 ROM and use Ofox recovery.
 - *[Moddified-twrp/Ofox-Recovery](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/Modified-Recovery)* - Download in Other Android Phone/PC
 - *[Magisk Manager](https://github.com/topjohnwu/Magisk/releases/tag/v29.0)* - Download into PocoF1
 
-- Boot into modded recovery using bugjager app or PC [``` fastboot boot modded-recovery.img```] and install Magisk.zip - `If not already rooted` 
-- Goto mount section and unmount all partition.
-- Open recovery terminal [```Advance - Terminal```] and type ` partition $ ` _[Replace $ with the size of storage in GB you want for Windows, Ex. - for 40GB type `partition 40`] (do not add GB at the end.)_ . If it asks you to "run it once again", do so
-- Reboot recovery and format userdata [``wipe-format-type`` **yes**] and Reboot to system.
+- Flash modded recovery using bugjager app or PC [``` fastboot flash recovery modded-recovery.img```] and install Magisk.zip - `If not already rooted`
+- Must take backup of Boot, Modem, EFS and Persist and save it to outside of your phone memory.
+- Open recovery terminal [```Advance - Terminal```] and type ` partition ` and If it asks you to "run it once again", do so .
+- Enter the size of storage in GB you want for Windows and Reboot to system.
+- If it failed to boot into Android, boot back to recovery and format userdata [``wipe-format-type`` **yes**]
 - Setup Android and Install Magisk/KernalSU.apk
 #
 
@@ -37,7 +37,7 @@
 - [windows esd image](https://arkt-7.github.io/woawin/) [Do not use 24H2] 
 - Download [WinInstaller.zip](https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/tag/PocoF1_WinInstaller)
 
-- The ESD file must be in the Download folder of the phone's memory, or if you need to flash it through a MEMORY_CARD or PENDRIVE, create a folder named `WOA` and copy ESD and WinInstaller.zip into it."
+- Download/Copy Windows ESD/WIM/ISO image and WinInstaller.zip.
 - Boot to Modded-recovery and flash wininstaller.zip [```Install - Select Wininstaller.zip and Swip to Flash```]
 - That's all , 
  You don't need to touch you phone just sit back and watch, all installation process start automatically and phone will reboot to windows setup.
@@ -84,3 +84,4 @@
     <img src="https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/blob/main/guide/buymecoffee.png" alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;">
   </a>
 </p>
+
