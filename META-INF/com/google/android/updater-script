@@ -109,17 +109,16 @@ else
 	WIN_IMAGE=""
 
 	search_img() {
-	  WIN_IMAGE=$(find "$1" -type f \( -name "*.wim" -o -name "*.esd" \) ! -path "*/Android/*" 2>/dev/null | head -n 1)
+	  WIN_IMAGE=$(find "$1" -type f \( -iname "*.wim" -o -name "*.esd" \) ! -path "*/Android/*" 2>/dev/null | head -n 1)
 	  [ -n "$WIN_IMAGE" ] && ui_print " Found: $WIN_IMAGE"
 	}
 
 	extract_iso() {
-	  ISO=$(find "$1" -type f -name "*.iso" ! -path "*/Android/*" 2>/dev/null | head -n 1)
+	  ISO=$(find "$1" -type f -iname "*.iso" ! -path "*/Android/*" 2>/dev/null | head -n 1)
 	  [ -n "$ISO" ] || return
 	  ui_print " Found ISO: $ISO"
 	  DIR=$(dirname "$ISO")
-	  package_extract_file "META-INF/com/bin/7za" "/tmp/7za"
-	  chmod 0777 /tmp/7za
+	  package_extract_file "META-INF/com/bin/7za" "/tmp/7za" && chmod 0777 /tmp/7za
 	  /tmp/7za e "$ISO" "sources/install.*" -o"$DIR" -y >/dev/null 2>&1
 	  WIN_IMAGE=$(find "$DIR" -type f \( -name "install.wim" -o -name "install.esd" \) | head -n 1)
 	  [ -n "$WIN_IMAGE" ] && ui_print " Extracted: $WIN_IMAGE"
