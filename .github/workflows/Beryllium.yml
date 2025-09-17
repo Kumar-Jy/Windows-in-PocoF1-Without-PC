@@ -21,8 +21,8 @@ jobs:
         run: |
           BUILD_DATE=$(date '+%d%m%y')
           echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
-          echo "ARTIFACT_NAME=PocoF1-wininstaller-TEST-$BUILD_DATE" >> $GITHUB_ENV
-          echo "ZIP_NAME=PocoF1_WinInstaller_TEST_${BUILD_DATE}.zip" >> $GITHUB_ENV
+          echo "ARTIFACT_NAME=PocoF1-wininstaller-$BUILD_DATE" >> $GITHUB_ENV
+          echo "ZIP_NAME=PocoF1_WinInstaller_${BUILD_DATE}.zip" >> $GITHUB_ENV
 
       - name: Create temp and target directories
         run: |
