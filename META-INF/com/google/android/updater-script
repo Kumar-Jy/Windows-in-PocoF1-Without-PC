@@ -16,7 +16,7 @@ show_progress 1.34 225;
 ui_print "================================================*"
 ui_print "*   Welcome to Windows Installation on PocoF1   *"
 ui_print "*      Version: WinInstaller_Beryllium_3.2      *"
-ui_print "*      Date   : 24-Aug-2025                     *"
+ui_print "*      Date   : 17-Sep-2025                     *"
 ui_print "*      Script Written by: Kumar_Jy              *"
 ui_print "* Help and suggestions: ArKT, Sog, Andre_grams  *"
 ui_print "* Drivers/UEFI:TAOcroatia,temblor55,2Petro & idk*"
