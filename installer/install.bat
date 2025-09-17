@@ -15,7 +15,7 @@ setlocal enabledelayedexpansion
 mode 800
 set ESP_PART_NAME="ESPF1"
 set WI_VERSION="WinInstaller_Beryllium_3.2"
-set BUID_DATE="15-Aug-2025"
+set BUID_DATE="17-Sep-2025"
 set DEVICE_NAME="Beryllium"
 set SECURE_BOOT="FALSE"
 set MAINTAINER="TAOcroatia,temblor55,2Petro and idk"
@@ -24,8 +24,7 @@ echo ============================================================
 echo    Welcome to Windows Installation in %DEVICE_NAME%    
 echo              Version: %WI_VERSION%              
 echo              Date   : %BUID_DATE%                           
-echo              Made by: Kumar_Jy, ArKT                             
-echo          Help and suggestions: Sog, Andre_grams.        
+echo              Made by: Kumar_Jy, ArKT, bibarub                                    
 echo    Drivers And UEFI: %MAINTAINER%
 echo ============================================================
 echo(
