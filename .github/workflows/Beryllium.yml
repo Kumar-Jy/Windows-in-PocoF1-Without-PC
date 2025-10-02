@@ -33,7 +33,7 @@ jobs:
           mkdir -p installer
           curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/pe.img \
           -o installer/pe.img
-          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/UEFI-Boot-Image/Driver.zip \
+          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/UEFI-Boot-Image/Beryllium-Driver.zip \
           -o installer/Driver.zip
 
       - name: Setup ToolBox
