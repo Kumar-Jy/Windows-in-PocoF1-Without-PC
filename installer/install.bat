@@ -123,7 +123,7 @@ echo Take a picture of the error, force reboot and ask for help on Telegram @win
 pause
 exit /b 1
 :addbootentry
-bcdboot %~1\Windows /s S: /f UEFI || exit /b 1
+bcdboot %~d0\Windows /s S: /f UEFI || exit /b 1
 if not "%SECURE_BOOT%"=="TRUE" (
 	bcdedit /store S:\EFI\Microsoft\BOOT\BCD /set {default} testsigning on || exit /b 1
 	bcdedit /store S:\EFI\Microsoft\BOOT\BCD /set {default} nointegritychecks on || exit /b 1
