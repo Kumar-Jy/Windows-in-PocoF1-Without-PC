@@ -5,18 +5,20 @@
 
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/wininstaller)
 #
-## Prerequisites
-- Unlocked bootloader
-- Other Android Devices/Computer - ```for booting into modded recovery```
-- USB otg cable - ``` for connecting your Android phone/Computer with your Poco F1```
-#
 ### [WARNING]
 > - _All your data will be erased ! Back up now if needed._
-> - _Backup Boot, EFS, Modem and Persist and save it to outside phone memory_
+> - _Backup Boot, EFS, Modem and Persist and save it to outside phone memory [Google Drive]_
 > - _Do not flash/run the same file/command twice unless specified._
 > - _Follow step by step guide, don't jump or skip any step._
 > - _YOU CAN BREAK YOUR DEVICE WITH THE COMMANDS/FILE BELOW IF YOU DO THEM WRONG!!!_
 > - _IF ANY ERROR, DO NOT REBOOT YOUR PHONE! just ask for help in the [Telegram chat](https://t.me/WinInstaller)._
+#
+
+## Prerequisites
+- Unlocked bootloader
+- Original Display Panel - ```Local market display panel may not work```
+- Other Android Devices/Computer - ```for booting into modded recovery```
+- USB otg cable - ``` for connecting your Android phone/Computer with your Poco F1```
 #
 
 ### 1st Step - Partitioning
@@ -27,7 +29,7 @@
 - Flash modded recovery using bugjager app or PC [``` fastboot flash recovery modded-recovery.img```] and install Magisk.zip - `If not already rooted`
 - Must take backup of Boot, Modem, EFS and Persist and save it to outside of your phone memory.
 - Open recovery terminal [```Advance - Terminal```] and type ` partition ` and If it asks you to "run it once again", do so .
-- Enter the size of storage in GB you want for Windows and Reboot to system.
+- Enter the size of storage in GB you want for Windows and Reboot to system. [like, `60GB` ]
 - If it failed to boot into Android, boot back to recovery and format userdata [``wipe-format-type`` **yes**]
 - Setup Android and Install Magisk/KernalSU.apk
 #
@@ -43,7 +45,7 @@
  You don't need to touch you phone just sit back and watch, all installation process start automatically and phone will reboot to windows setup.
 
 - #### Notes :- 
-> - If you have to re-flash/re-install it by-any reasons, type `format` recovery terminal then only you can install/flash,
+> - If you have to re-flash/re-install it by-any reasons, first restore Android boot backup then format win, esp partition by enter command `format` in recovery terminal then only you can install/flash,
 > - Remove any attached usb device or charger before flashing, else it may be BSOD error.
 > - Visit _[troubleshooting](troubleshooting.md)_ if any error.
 
@@ -84,4 +86,5 @@
     <img src="https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/blob/main/guide/buymecoffee.png" alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;">
   </a>
 </p>
+
 
