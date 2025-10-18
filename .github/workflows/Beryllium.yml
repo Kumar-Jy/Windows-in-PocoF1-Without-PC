@@ -44,13 +44,15 @@ jobs:
           -o temp/ToolBox/Win_Office_Activator.bat
           curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AME.Wizard.Beta.exe \
           -o temp/ToolBox/AME.Wizard.exe
+          curl -L https://github.com/Kumar-Jy/WOAInstaller/releases/download/files/Dism++10ARM.zip \
+          -o temp/ToolBox/Dism++10ARM.zip
           curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AtlasPlaybook_v0.4.1.apbx \
           -o temp/ToolBox/AtlasPlaybook_v0.4.1.apbx
           cd temp/ToolBox && 7z a ../../Toolbox.zip *
 
       - name: Download Woa-Helper
         run: |
-          curl -L https://github.com/n00b69/woa-helper/releases/download/APK/BETAwoahelper1.8.4.41.apk \
+          curl -L https://github.com/n00b69/woa-helper/releases/download/APK/BETAwoahelper1.8.4.42.apk \
           -o woahelper.apk
 
       - name: Generate and copy SHA-256 checksums
