@@ -1,4 +1,4 @@
-@eche off
+@echo off
 :: Check if font has already been set because if not then it will loop
 if "%1" neq "nofont" (
     :: CMD font size set to approx. 34 in hex 0x00220000
