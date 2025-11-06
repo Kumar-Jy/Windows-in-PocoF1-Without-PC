@@ -166,8 +166,14 @@ fi
 if [ -d $UPD_TEMP_FOLDER ]
 then rm -rf $UPD_TEMP_FOLDER
 fi
+
 mkdir -p $UPD_TEMP_FOLDER
+
+for b in 7za gdisk ntfsfix wimlib; do
+    package_extract_file META-INF/com/bin/$b $UPD_TEMP_FOLDER/$b || ui_print "Cannot extract $b. Is it included in the package?"
+done
+
 package_extract_file META-INF/com/google/android/updater-script $UPD_TEMP_FOLDER/updater-script || ui_print "Can not extract updater-script. Do you have it in package?"
-chmod 777 $UPD_TEMP_FOLDER/updater-script
+chmod -R 0777 "$UPD_TEMP_FOLDER"
 . $UPD_TEMP_FOLDER/updater-script $@
 exit $?
