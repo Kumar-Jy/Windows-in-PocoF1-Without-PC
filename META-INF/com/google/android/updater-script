@@ -67,12 +67,11 @@ fi
 
 ui_print "*-----------------------------------------------*"
 ui_print "*                   Fixing GPT                  *"
-mkdir -p /tmp
-GDISK_BINARY="/tmp/gdisk"
-package_extract_file "META-INF/com/bin/gdisk" "$GDISK_BINARY" && chmod 0777 "$GDISK_BINARY"
-
-for dev in /dev/block/sd[a-f]; do
-    "$GDISK_BINARY" "$dev" <<< $'x\nj\n\nk\n\nw\nY\n'
+for d in /dev/block/sd?; do
+    if [ -b "$d" ]; then
+        ui_print "Fixing GPT on $d"
+        printf 'x\nj\n\nk\n\nw\nY\n' | "/tmp/gdisk" "$d"
+    fi
 done
 
 ui_print "*-----------------------------------------------*"
@@ -90,8 +89,9 @@ done
 ui_print "*-----------------------------------------------*"
 ui_print "*   Checking if Windows is already installed    *"
 ui_print "*-----------------------------------------------*"
+/tmp/ntfsfix -b -d "$path/win" 2>/dev/null
 mkdir -p /tmp/win
-umount $path/win
+umount "$path/win" 2>/dev/null
 mount.ntfs "$path/win" /tmp/win || { ui_print "Failed to mount $path/win"; exit 1; }
 
 if [ -f /tmp/win/Windows/explorer.exe ]; then
@@ -118,10 +118,9 @@ else
 	  [ -n "$ISO" ] || return
 	  ui_print " Found ISO: $ISO"
 	  DIR=$(dirname "$ISO")
-	  package_extract_file "META-INF/com/bin/7za" "/tmp/7za" && chmod 0777 /tmp/7za
 	  /tmp/7za e "$ISO" "sources/install.*" -o"$DIR" -y >/dev/null 2>&1
 	  WIN_IMAGE=$(find "$DIR" -type f \( -name "install.wim" -o -name "install.esd" \) | head -n 1)
-	  [ -n "$WIN_IMAGE" ] && ui_print " Extracted: $WIN_IMAGE"
+	  [ -n "$WIN_IMAGE" ]
 	}
 	
 	for d in /sdcard/Download /external_sd/WOA /usbstorage/WOA /usb_otg/WOA /sdcard /external_sd /usbstorage /usb_otg; do
@@ -136,13 +135,10 @@ else
 	  [ -n "$WIN_IMAGE" ] && break
 	done
 	
-	[ -n "$WIN_IMAGE" ] || error_exit " No Windows image (.wim/.esd or .iso with install.wim/esd) found!"
+	[ -n "$WIN_IMAGE" ] || error_exit " No Windows image (wim/esd or iso ) found!"
 
     ui_print "*-----------------------------------------------*"
     ui_print "*           Verifying Windows Edition           *"
-    mkdir -p /tmp
-    package_extract_file "META-INF/com/bin/wimlib" "/tmp/wimlib"
-    chmod 0777 /tmp/wimlib
     /tmp/wimlib info "$WIN_IMAGE" > /tmp/wim_info.txt
     
 	WINDOWS_EDITIONS=(
@@ -170,14 +166,15 @@ else
 
     ui_print "*-----------------------------------------------*"
     ui_print " Installing $SELECTED_EDITION ....."
-    umount $path/win
+    umount "$path/win" 2>/dev/null
     mkfs.ntfs -f $path/win -L WINF1
+    /tmp/ntfsfix -b -d "$path/win" 2>/dev/null
     /tmp/wimlib apply "$WIN_IMAGE" "$SELECTED_INDEX" "$path/win"
 fi
 
 mount.ntfs $path/win /tmp/win
 if [ ! -f /tmp/win/Windows/explorer.exe ]; then
-    error_exit "Failed to install $SELECTED_EDITION, ESD/WIM file may be corrupted, Reboot to Android and check the ESD/WIM image."
+    error_exit "Failed to install $SELECTED_EDITION, ESD/WIM file may be corrupted, Reboot to Android and check the ESD/WIM/ISO image."
 fi
 
 ui_print "*-----------------------------------------------*"
