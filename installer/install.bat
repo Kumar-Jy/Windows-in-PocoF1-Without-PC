@@ -1,4 +1,4 @@
-@echo off
+@eche off
 :: Check if font has already been set because if not then it will loop
 if "%1" neq "nofont" (
     :: CMD font size set to approx. 34 in hex 0x00220000
@@ -36,6 +36,10 @@ echo(
 echo ============================================================
 echo             Checking for Windows installation...
 echo ============================================================
+echo(
+echo Running CHKDSK to fix NTFS volume...
+chkdsk %~d0 /F /X
+echo CHKDSK complete.
 echo(
 
 rem Check if Windows is already installed
