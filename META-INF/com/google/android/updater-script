@@ -150,22 +150,41 @@ else
 		"Windows 10 Pro"
 		"Windows 10 Home"
     )
-	
+
+    ui_print "*-----------------------------------------------*"
+    
+    if ! grep -q "ARM64" /tmp/wim_info.txt; then
+      error_exit "Incompatible Architecture found. Please Download ARM64 Version."
+    fi
+    ui_print "* ARM64 architecture detected. Proceeding ..... *"
+    
     for EDITION in "${WINDOWS_EDITIONS[@]}"; do
         INDEX=$(grep -B 1 "$EDITION" /tmp/wim_info.txt | awk '/Index/ {print $2; exit}')
         if [[ -n "$INDEX" ]]; then
             SELECTED_INDEX="$INDEX"
             SELECTED_EDITION="$EDITION"
-            ui_print "* $SELECTED_EDITION found at Index No $SELECTED_INDEX *" 
+            ui_print "* $SELECTED_EDITION found at Index No $SELECTED_INDEX " 
             break
         fi
     done
 	if [[ -z "$SELECTED_INDEX" ]]; then
 		error_exit "! No matching Windows edition found in $WIN_IMAGE !"
 	fi
+	
+	BUILDS=("19045" "22621" "22631" "26100" "26200" "28000")
 
+    for BUILD in "${BUILDS[@]}"; do
+      if grep -q "$BUILD" /tmp/wim_info.txt; then
+        ui_print "* Build $BUILD detected  "
+        BUILD_MATCH="$BUILD"
+        break
+      fi
+    done
+
+    [[ -z "$BUILD_MATCH" ]] && error_exit "Windows Build version not matching"
+    
     ui_print "*-----------------------------------------------*"
-    ui_print " Installing $SELECTED_EDITION ....."
+    ui_print " Installing $SELECTED_EDITION $BUILD ARM64....."
     umount "$path/win" 2>/dev/null
     mkfs.ntfs -f $path/win -L WINF1
     /tmp/ntfsfix -b -d "$path/win" 2>/dev/null
@@ -197,16 +216,19 @@ case "$(cat /proc/cmdline)" in *ebbg_fhd_ft8719*) panel=EBBG ;; *tianma_fhd_nt36
 for f in /sys/class/input/event*/device/name; do n=$(cat "$f"); case "$n" in *NVT*|*nvt*|*NVTCapacitive*) touch=Novatek ;; *fts*|*Fts*|*Focaltech*) touch=FocalTech ;; esac; done
 
 case "$panel/$touch" in
-  EBBG/FocalTech) img1=ebbg.img; img2=newebbg.img; msg="*EBBG boot image extracted successfully*" ;;
-  EBBG/Novatek)   img1=tianma.img; img2=newtianma.img; msg="Hybrid panel detected — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTechTouch."{inf,cat,sys} ;;
-  Tianma/FocalTech)   img1=ebbg.img; img2=newebbg.img; msg="Hybrid panel detected — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
-  Tianma/Novatek) img1=tianma.img; img2=newtianma.img; msg="*Tianma boot image extracted successfully*" ;;
-  *) error_exit "* Unknown display/touch combo, UEFI flashing failed *" ;;
+  EBBG/FocalTech) img1=ebbg.img; img2=ebbg25h2.img; img3=ebbg23h2.img; msg="* Found $panel/$touch and EBBG boot image extracted successfully "; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
+  EBBG/Novatek)   img1=tianma.img; img2=tianma25h2.img; img3=tianma23h2.img; msg="* Found $panel/$touch, Hybrid panel detected and tianma uefi extracted — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTechTouch."{inf,cat,sys} ;;
+  Tianma/FocalTech)   img1=ebbg.img; img2=ebbg25h2.img; img3=ebbg23h2.img; msg="* Found $panel/$touch, Hybrid panel detected and ebbg uefi extracted — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
+  Tianma/Novatek) img1=tianma.img; img2=tianma25h2.img; img3=tianma23h2.img; msg="* Found $panel/$touch and Tianma boot image extracted successfully "; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTechTouch."{inf,cat,sys} ;;
+  *) error_exit "* Unknown display/touch combo, UEFI flashing failed " ;;
 esac
 
 package_extract_file "installer/$img1" /tmp/win/installer/uefi.img || error_exit "$img1 extraction failed"
-package_extract_file "installer/$img2" /sdcard/UEFI/"$img2" || error_exit "$img2 extraction failed"
+package_extract_file "installer/$img2" /tmp/win/installer/uefiboot.img || error_exit "$img2 extraction failed"
 ui_print "$msg"
+
+if [[ "$BUILD_MATCH" == "26200" || "$MATCH" == "26100" || "$MATCH" == "28000" ]]; then FILE="$img2"; else FILE="$img3"; fi
+package_extract_file "installer/$FILE" "/sdcard/UEFI/$FILE" || error_exit "$FILE failed to copy in UEFI folder"
 
 package_extract_file "Toolbox.zip" "/tmp/win/Toolbox.zip" || error_exit "Error in extracting Toolbox.zip"
 package_extract_file "woahelper.apk" "/sdcard/woahelper.apk" || error_exit "Error in extracting woahelper.apk"
