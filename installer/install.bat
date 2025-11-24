@@ -14,8 +14,8 @@ if "%1" neq "nofont" (
 setlocal enabledelayedexpansion
 mode 800
 set ESP_PART_NAME="ESPF1"
-set WI_VERSION="WinInstaller_Beryllium_3.2"
-set BUID_DATE="17-Sep-2025"
+set WI_VERSION="WinInstaller_Beryllium_3.3"
+set BUID_DATE="12-Nov-2025"
 set DEVICE_NAME="Beryllium"
 set SECURE_BOOT="FALSE"
 set MAINTAINER="TAOcroatia,temblor55,2Petro and idk"
@@ -29,6 +29,7 @@ echo    Drivers And UEFI: %MAINTAINER%
 echo ============================================================
 echo(
 if not exist "%~d0\boot.img" echo Failed to find the boot image. & goto fail
+if not exist "%~dp0uefiboot.img" echo Failed to find uefiboot.img & goto fail
 if not exist "%~dp0sta.exe" echo Failed to find sta.exe. & goto fail
 "%~dp0sta" -p "%~d0\boot.img" -n || echo Failed to flash the boot image. && goto fail
 
@@ -109,11 +110,22 @@ echo Found: %xmlFile%
     Dism /Image:%~d0\ /Add-Driver /Driver:"%repo%" /Recurse || goto fail
 )
 
+echo applying touchfix
+echo(
+reg load HKLM\OFFLINE %~d0\Windows\System32\config\SYSTEM
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalWidth /t REG_DWORD /d 0x0000438
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalHeight /t REG_DWORD /d 0x00008c6
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalWidth /t REG_DWORD /d 0x0000438
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalHeight /t REG_DWORD /d 0x00008c6
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableWidth /t REG_DWORD /d 0x0000438
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableHeight /t REG_DWORD /d 0x00008c6
+reg unload HKLM\OFFLINE
+
 echo(
 echo ==========================================================
 echo Installation completed. Rebooting into Windows in 5 seconds.
 echo ==========================================================
-"%~dp0sta" -p "%~dp0uefi.img" -n || echo Failed to flash the UEFI image. && goto fail
+"%~dp0sta" -p "%~dp0uefiboot.img" -n || echo Failed to flash the UEFI image. && goto fail
 
 echo(
 echo ==========================================================
@@ -134,6 +146,7 @@ if not "%SECURE_BOOT%"=="TRUE" (
 	bcdedit /store S:\EFI\Microsoft\BOOT\BCD /set {default} recoveryenabled no || exit /b 1
 )
 exit /b
+
 :indexlookup
 for /f "tokens=2 delims=: " %%a in ('dism /Get-WimInfo /WimFile:%imageFile% ^| findstr /i /c:"Index :"') do (
     set currentIndex=%%a
