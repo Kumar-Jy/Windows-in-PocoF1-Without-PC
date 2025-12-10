@@ -112,14 +112,14 @@ echo Found: %xmlFile%
 
 echo applying touchfix
 echo(
-reg load HKLM\OFFLINE %~d0\Windows\System32\config\SYSTEM
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalWidth /t REG_DWORD /d 0x0000438
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalHeight /t REG_DWORD /d 0x00008c6
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalWidth /t REG_DWORD /d 0x0000438
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalHeight /t REG_DWORD /d 0x00008c6
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableWidth /t REG_DWORD /d 0x0000438
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableHeight /t REG_DWORD /d 0x00008c6
-reg unload HKLM\OFFLINE
+reg load HKLM\OFFLINE %~d0\Windows\System32\config\SYSTEM >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
+reg unload HKLM\OFFLINE >nul 2>&1
 
 echo(
 echo ==========================================================
