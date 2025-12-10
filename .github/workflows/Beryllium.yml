@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install 7zip
         run: sudo apt-get update && sudo apt-get install -y p7zip-full
@@ -38,21 +38,21 @@ jobs:
 
       - name: Setup ToolBox
         run: |
+          curl -L https://github.com/Misha803/My-Scripts/releases/download/WOA-ToolBox/WOA-Toolbox-NEW.exe \
+          -o ToolBox/ToolBox.exe
           curl -L https://github.com/asheroto/Deploy-Office/releases/latest/download/Deploy-Office.exe \
-          -o temp/ToolBox/Deploy-Office.exe
-          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/win_office_activator.bat \
-          -o temp/ToolBox/Win_Office_Activator.bat
-          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AME.Wizard.Beta.exe \
-          -o temp/ToolBox/AME.Wizard.exe
+          -o ToolBox/Deploy-Office.exe
+          curl -L https://github.com/Kumar-Jy/WOAInstaller/releases/download/files/AtlasPlaybook_v0.5.0-hotfix.apbx \
+          -o ToolBox/AtlasPlaybook.apbx
+          curl -L https://github.com/Kumar-Jy/WOAInstaller/releases/download/files/AME.Beta.exe \
+          -o ToolBox/AME-Wizard.exe
           curl -L https://github.com/Kumar-Jy/WOAInstaller/releases/download/files/Dism++10ARM.zip \
-          -o temp/ToolBox/Dism++10ARM.zip
-          curl -L https://github.com/Kumar-Jy/Windows-in-PocoF1-Without-PC/releases/download/Misc-Files/AtlasPlaybook_v0.4.1.apbx \
-          -o temp/ToolBox/AtlasPlaybook_v0.4.1.apbx
+          -o ToolBox/Dism++.zip
           cd temp/ToolBox && 7z a ../../Toolbox.zip *
 
       - name: Download Woa-Helper
         run: |
-          curl -L https://github.com/n00b69/woa-helper/releases/download/APK/BETAwoahelper1.8.4.42.apk \
+          curl -L https://github.com/n00b69/woa-helper/releases/download/APK/BETAwoahelper1.8.4.44.apk \
           -o woahelper.apk
 
       - name: Generate and copy SHA-256 checksums
