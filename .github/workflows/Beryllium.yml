@@ -39,15 +39,15 @@ jobs:
       - name: Setup ToolBox
         run: |
           curl -L https://github.com/Misha803/My-Scripts/releases/download/WOA-ToolBox/WOA-Toolbox-NEW.exe \
-          -o /temp/ToolBox/ToolBox.exe
+          -o temp/ToolBox/ToolBox.exe
           curl -L https://github.com/asheroto/Deploy-Office/releases/latest/download/Deploy-Office.exe \
-          -o /temp/ToolBox/Deploy-Office.exe
+          -o temp/ToolBox/Deploy-Office.exe
           curl -L https://github.com/Kumar-Jy/WOAInstaller/releases/download/files/AtlasPlaybook_v0.5.0-hotfix.apbx \
-          -o /temp/ToolBox/AtlasPlaybook.apbx
+          -o temp/ToolBox/AtlasPlaybook.apbx
           curl -L https://github.com/Kumar-Jy/WOAInstaller/releases/download/files/AME.Beta.exe \
-          -o /temp/ToolBox/AME-Wizard.exe
+          -o temp/ToolBox/AME-Wizard.exe
           curl -L https://github.com/Kumar-Jy/WOAInstaller/releases/download/files/Dism++10ARM.zip \
-          -o /temp/ToolBox/Dism++.zip
+          -o temp/ToolBox/Dism++.zip
           cd temp/ToolBox && 7z a ../../Toolbox.zip *
 
       - name: Download Woa-Helper
