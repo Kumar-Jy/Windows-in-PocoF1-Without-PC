@@ -15,7 +15,7 @@ setlocal enabledelayedexpansion
 mode 800
 set ESP_PART_NAME="ESPF1"
 set WI_VERSION="WinInstaller_Beryllium_3.3"
-set BUID_DATE="12-Nov-2025"
+set BUID_DATE="10-Dec-2025"
 set DEVICE_NAME="Beryllium"
 set SECURE_BOOT="FALSE"
 set MAINTAINER="TAOcroatia,temblor55,2Petro and idk"
@@ -111,15 +111,7 @@ echo Found: %xmlFile%
 )
 
 echo applying touchfix
-echo(
-reg load HKLM\OFFLINE %~d0\Windows\System32\config\SYSTEM >nul 2>&1
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
-reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
-reg unload HKLM\OFFLINE >nul 2>&1
+call :touchfix %~d0 || goto fail
 
 echo(
 echo ==========================================================
@@ -145,6 +137,18 @@ if not "%SECURE_BOOT%"=="TRUE" (
 	bcdedit /store S:\EFI\Microsoft\BOOT\BCD /set {default} nointegritychecks on || exit /b 1
 	bcdedit /store S:\EFI\Microsoft\BOOT\BCD /set {default} recoveryenabled no || exit /b 1
 )
+exit /b
+
+:touchfix
+reg load HKLM\OFFLINE %~d0\Windows\System32\config\SYSTEM
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v TouchPhysicalHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayPhysicalHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableWidth /t REG_DWORD /d 0x0000438 /f >nul 2>&1
+reg add "HKLM\OFFLINE\TOUCH\SCREENPROPERTIES" /v DisplayViewableHeight /t REG_DWORD /d 0x00008c6 /f >nul 2>&1
+reg unload HKLM\OFFLINE
+echo touchfixup applied successfully
 exit /b
 
 :indexlookup
