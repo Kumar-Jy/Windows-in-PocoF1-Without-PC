@@ -48,6 +48,8 @@ If you stumble upon this error, you may need to reinstall Windows. Use the [Inst
 ### INACCESSIBLE_BOOT_DEVICE BSOD
 This Blue Screen of Death likely means some broken driver installation. To fix this, reinstall windows using the [Installation guide](Installation.md).
 #
-### Wifi and mobile data not working
+### Wifi and mobile data not working in Windows
 Restart windows. if still not working, restore modem and persist from recovery.
 #
+### SIM network not showing in Android 
+Run code ``*#*#25327337#*#*`` and reboot. if this code is not working in your Custom rom then install stock MIUI and run.
