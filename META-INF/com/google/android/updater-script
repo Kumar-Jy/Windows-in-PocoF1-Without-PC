@@ -227,7 +227,7 @@ package_extract_file "installer/$img1" /tmp/win/installer/uefi.img || error_exit
 package_extract_file "installer/$img2" /tmp/win/installer/uefiboot.img || error_exit "$img2 extraction failed"
 ui_print "$msg"
 
-if [[ "$BUILD_MATCH" == "26200" || "$MATCH" == "26100" || "$MATCH" == "28000" ]]; then FILE="$img2"; else FILE="$img3"; fi
+if [[ "$BUILD_MATCH" == "26200" || "$BUILD_MATCH" == "26100" || "$BUILD_MATCH" == "28000" ]]; then FILE="$img2"; else FILE="$img3"; fi
 package_extract_file "installer/$FILE" "/sdcard/UEFI/$FILE" || error_exit "$FILE failed to copy in UEFI folder"
 
 package_extract_file "Toolbox.zip" "/tmp/win/Toolbox.zip" || error_exit "Error in extracting Toolbox.zip"
@@ -238,7 +238,11 @@ ui_print "*             Flashing UEFI Image               *"
 dd if=/sdcard/backup/boot.img of=/tmp/win/boot.img || error_exit "Error copying boot.img"
 dd if=/tmp/win/installer/pe.img of=$path/esp || error_exit "Error flashing pe.img"
 dd if=/tmp/win/installer/uefi.img of=$path/boot || error_exit "Error flashing uefi.img"
-umount $path/{esp,win}
+
+ui_print "*-----------------------------------------------*"
+ui_print "*    Resetting Simple Init Boot Configuration   *"
+mkdir -p /logfs && mount "$path/logfs" /logfs && rm -rf /logfs/* 2>/dev/null
+umount $path/{esp,win,logfs} 2>/dev/null
 sleep 1
 ui_print "*===============================================*"
 ui_print "*              Flashing Completed               *"
