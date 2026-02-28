@@ -143,8 +143,8 @@ else
     
 	WINDOWS_EDITIONS=(
         "Windows 11 Pro"
-        "Windows 11 IoT Enterprise LTSC"
-        "Windows 11 Enterprise LTSC"
+        "Windows 11 IoT Enterprise LTSC 2024"
+        "Windows 11 Enterprise LTSC 2024"
 		"Windows 11 Enterprise"
         "Windows 11 Home"
 		"Windows 10 Pro"
@@ -216,10 +216,10 @@ case "$(cat /proc/cmdline)" in *ebbg_fhd_ft8719*) panel=EBBG ;; *tianma_fhd_nt36
 for f in /sys/class/input/event*/device/name; do n=$(cat "$f"); case "$n" in *NVT*|*nvt*|*NVTCapacitive*) touch=Novatek ;; *fts*|*Fts*|*Focaltech*) touch=FocalTech ;; esac; done
 
 case "$panel/$touch" in
-  EBBG/FocalTech) img1=ebbg.img; img2=ebbg25h2.img; img3=ebbg23h2.img; msg="* Found $panel/$touch and EBBG boot image extracted successfully "; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
-  EBBG/Novatek)   img1=tianma.img; img2=tianma25h2.img; img3=tianma23h2.img; msg="* Found $panel/$touch, Hybrid panel detected and tianma uefi extracted — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTechTouch."{inf,cat,sys} ;;
-  Tianma/FocalTech)   img1=ebbg.img; img2=ebbg25h2.img; img3=ebbg23h2.img; msg="* Found $panel/$touch, Hybrid panel detected and ebbg uefi extracted — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
-  Tianma/Novatek) img1=tianma.img; img2=tianma25h2.img; img3=tianma23h2.img; msg="* Found $panel/$touch and Tianma boot image extracted successfully "; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTechTouch."{inf,cat,sys} ;;
+  EBBG/FocalTech) img2=ebbg25h2.img; img1=ebbg23h2.img; msg="* Found $panel/$touch and EBBG boot image extracted successfully "; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
+  EBBG/Novatek)   img2=tianma25h2.img; img1=tianma23h2.img; msg="* Found $panel/$touch, Hybrid panel detected and tianma uefi extracted — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTechTouch."{inf,cat,sys} ;;
+  Tianma/FocalTech)   img2=ebbg25h2.img; img1=ebbg23h2.img; msg="* Found $panel/$touch, Hybrid panel detected and ebbg uefi extracted — hope it works..."; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/nt36xxx."{inf,cat,sys} ;;
+  Tianma/Novatek) img2=tianma25h2.img; img1=tianma23h2.img; msg="* Found $panel/$touch and Tianma boot image extracted successfully "; rm -f "/tmp/win/installer/Driver/components/QC845/Device/DEVICE.SOC_QC845.BERYLLIUM/Drivers/Touch/FocalTechTouch."{inf,cat,sys} ;;
   *) error_exit "* Unknown display/touch combo, UEFI flashing failed " ;;
 esac
 
@@ -227,7 +227,7 @@ package_extract_file "installer/$img1" /tmp/win/installer/uefi.img || error_exit
 package_extract_file "installer/$img2" /tmp/win/installer/uefiboot.img || error_exit "$img2 extraction failed"
 ui_print "$msg"
 
-if [[ "$BUILD_MATCH" == "26200" || "$BUILD_MATCH" == "26100" || "$BUILD_MATCH" == "28000" ]]; then FILE="$img2"; else FILE="$img3"; fi
+if [[ "$BUILD_MATCH" == "26200" || "$BUILD_MATCH" == "26100" || "$BUILD_MATCH" == "28000" ]]; then FILE="$img2"; else FILE="$img1"; fi
 package_extract_file "installer/$FILE" "/sdcard/UEFI/$FILE" || error_exit "$FILE failed to copy in UEFI folder"
 
 package_extract_file "Toolbox.zip" "/tmp/win/Toolbox.zip" || error_exit "Error in extracting Toolbox.zip"
